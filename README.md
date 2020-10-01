@@ -1,1 +1,2 @@
-# elemetrica
+# Elemétrica SKU Classification Problem
+WIP
