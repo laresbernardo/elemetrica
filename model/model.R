@@ -21,7 +21,7 @@ w2v.model <- h2o_word2vec(words,
 data <- df %>% bind_cols(as.data.frame(w2v.model$vectors)) %>% filter(!is.na(C1))
 
 # Train model
-model3 <- h2o_automl(
+modelx <- h2o_automl(
   data, 
   y = "category", 
   ignore = "product", 
@@ -32,7 +32,7 @@ model3 <- h2o_automl(
   plots = FALSE)
 
 # Select model object
-model <- model3
+model <- modelx
 
 # Cumulative predictions accuracy
 mplot_topcats(model$scores_test$tag,
