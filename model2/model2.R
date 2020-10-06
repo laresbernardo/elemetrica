@@ -9,10 +9,10 @@ params <- list(
   w2v.epochs = 16,
   w2v.window = 6,
   w2v.vecs = 150,
-  models = 0.8,
+  models = 1,
+  train_p = 0.7,
   exclude_algos = NULL,
-  include_algos = "DRF",
-  train_p = 1)
+  include_algos = "DRF")
 
 # Read the data
 cats <- read_data(type = params$type)

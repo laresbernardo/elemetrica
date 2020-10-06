@@ -25,7 +25,7 @@ jobs:
           path: ~/Library/Application Support/renv
           key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
-            ${{ runner.os }}-renv2-
+            ${{ runner.os }}-renv-
 
       - name: Install libraries
         run: |
