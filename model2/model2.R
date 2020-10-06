@@ -4,15 +4,15 @@ params <- list(
   level = 4,
   type = 2,
   min_per_cat = 10,
-  dropnumwords = TRUE,
+  dropnumwords = FALSE,
   minchar = 1,
   w2v.epochs = 16,
   w2v.window = 6,
   w2v.vecs = 150,
-  models = 1,
+  models = 10,
   train_p = 0.7,
   exclude_algos = NULL,
-  include_algos = "DRF")
+  include_algos = NULL)
 
 # Read the data
 cats <- read_data(type = params$type)
