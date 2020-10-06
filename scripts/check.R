@@ -14,6 +14,6 @@ ggplot(new, aes(x = reorder(category, probability), y = probability)) +
 
 hist(new$probability)
 
-write.csv(new, "data_preds/test2_4.csv")
+write.csv(new, "data_preds/test3.csv")
 
 freqs(new$category)

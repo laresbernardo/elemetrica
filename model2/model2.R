@@ -49,12 +49,13 @@ modelx <- h2o_automl(
   thresh = 1000, 
   start_clean = FALSE,
   plots = FALSE)
-
 # Select model object
 model <- modelx
-# Save performance results
+# Show and save performance results
 params[["model_name"]] <- model$model_name
 params[["results"]] <- model$metrics$metrics
+print(model$model@model$cross_validation_metrics_summary)
+
 # Create a quick log
 save_log(params, save = params$save, print = TRUE)
 # (Brag) show results!

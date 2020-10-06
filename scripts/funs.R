@@ -45,6 +45,7 @@ read_data <- function() {
                              "level3lab","level3",
                              "level4lab","level4")) %>%
     mutate(code = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
+    filter(!is.na(level1)) %>%
     mutate_all(list(as.character)) %>%
     mutate(source = 1)
   
@@ -58,16 +59,18 @@ read_data <- function() {
            level3lab = substr(code, 6,8),
            level4lab = substr(code, 9,11)) %>%
     left_join(read_codes(), "code") %>%
+    filter(!is.na(level1)) %>%
     select(any_of(colnames(df1))) %>%
     mutate_all(list(as.character)) %>%
     mutate(source = 2)
   
   df <- bind_rows(df1, df2) %>%
-    mutate(chain2 = paste(level1, level2, sep = " > "),
-           chain3 = paste(level1, level2, level3, sep = " > "),
-           chain4 = paste(level1, level2, level3, level4, sep = " > "),
-           chain = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
-    arrange(chain) %>%
+    mutate(
+      chain1 = level1,
+      chain2 = paste(level1, level2, sep = " > "),
+      chain3 = paste(level1, level2, level3, sep = " > "),
+      chain4 = paste(level1, level2, level3, level4, sep = " > ")) %>%
+    arrange(code) %>%
     distinct(.keep_all = TRUE) %>%
     as_tibble()
   
@@ -77,10 +80,10 @@ read_data <- function() {
 
 # Prepare XLSX data
 prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
-  cats[,(level + 9)] %>%
+  cats[,paste0("chain", level)] %>%
     cbind(cleanText(cats$product)) %>%
-    cbind(cleanText(cats$chain)) %>%
-    cbind(cleanText(cats$source)) %>%
+    cbind(toupper(cats$code)) %>%
+    cbind(cats$source) %>%
     magrittr::set_colnames(c("category", "product", "chain", "source")) %>%
     mutate(category = cleanText(category, spaces = "."),
            product = cleanText(product, spaces = ".")) %>%
@@ -92,7 +95,7 @@ prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
 
 # Print summary
 summary_data <- function(df, cats) {
-  list(product = nrow(df),
+  list(products = nrow(df),
        categories = length(unique(cats$code)),
        categories_used = length(unique(df$category)),
        data_used = round(nrow(df)/nrow(cats), 4),
@@ -168,19 +171,15 @@ clean_label <- function(x, label = "label") {
 }
 
 save_log <- function(params, save = TRUE, print = TRUE) {
-  temp <- params[["data"]]
-  df <- data.frame(
-    metric = c(names(params), names(temp)),
-    value = c(unlist(params), unlist(temp))) %>%
-    mutate(label = paste(metric, value, sep = ":"))
-  log_tab <- data.frame(time = Sys.time()) %>%
-    cbind(tidyr::spread(df %>% select(-label), metric, value))
-  log_txt <- df %>% pull(label) %>% paste(collapse = " ")
-  log_txt <- paste(Sys.time(), log_txt)
-  if (save) write.table(
-    log_tab, 
-    file = "resultslog.csv", sep = ",", 
+  params[["data"]]$most_freq <- NULL
+  df <- suppressWarnings(bind_cols(params))
+  log_tab <- data.frame(time = as.character(Sys.time())) %>% cbind(df)
+  file <- "resultslog.csv"
+  col.names <- !file.exists(file)
+  if (save) suppressWarnings(write.table(
+    log_tab, file = file, sep = ",", 
     append = TRUE, quote = FALSE,
-    col.names = FALSE, row.names = FALSE)
+    col.names = col.names, row.names = FALSE))
+  log_txt <- paste(names(log_tab), log_tab, sep = ":", collapse = "|")
   if (print) print(log_txt)
 }

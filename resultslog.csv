@@ -1,0 +1,2 @@
+time,level,min_per_cat,dropnumwords,minchar,w2v.epochs,w2v.window,w2v.vecs,models,train_p,include_algos,save,products,categories,categories_used,data_used,model_name,AUC,ACC
+2020-10-06 16:29:12,4,10,FALSE,1,16,6,150,1,1,DRF,TRUE,24542,419,271,0.977,DRF_1_AutoML_20201006_160015,0.99999,0.99049

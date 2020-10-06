@@ -11,7 +11,8 @@ params <- list(
   models = 1,
   train_p = 1,
   exclude_algos = NULL,
-  include_algos = "DRF")
+  include_algos = "DRF",
+  save = TRUE)
 
 # Read the data
 cats <- read_data()
@@ -54,6 +55,9 @@ model <- modelx
 # Save performance results
 params[["model_name"]] <- model$model_name
 params[["results"]] <- model$metrics$metrics
+
+# Create a quick log
+save_log(params, save = params$save, print = TRUE)
 # (Brag) show results!
 print(params)
 
