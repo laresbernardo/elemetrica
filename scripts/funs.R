@@ -12,23 +12,27 @@ h2o.init()
 # Define stopwords
 STOP_WORDS = c("para","de","y")
 
+# List of all possible codes
+read_codes <- function() {
+  file <- "data_raw/categorizacion_regional_DISENSA.xlsx"
+  read.xlsx(file, "base")
+}
+
 # Import XLSX file
-read_data <- function(type = 1) {
-  if (type == 1)
-    read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
-    cleanNames() %>%
-    select(texto_breve_de_material, x28, x30, x32) %>%
-    rename(product = texto_breve_de_material,
-           level1 = x28,
-           level2 = x30,
-           level3 = x32) %>%
-    mutate(chain = paste(level1, level2, level3, sep = " > "),
-           level2 = paste(level1, level2, sep = " > ")) %>%
-    arrange(chain) %>%
-    distinct(.keep_all = TRUE) %>%
-    as_tibble()
-  if (type == 2)
-    read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
+read_data <- function() {
+  
+  # if (type == 1)
+  #   df <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
+  #     cleanNames() %>%
+  #     select(texto_breve_de_material, x28, x30, x32) %>%
+  #     rename(product = texto_breve_de_material,
+  #            level1 = x28,
+  #            level2 = x30,
+  #            level3 = x32) %>%
+  #     mutate(chain = paste(level1, level2, level3, sep = " > "),
+  #            level2 = paste(level1, level2, sep = " > "))
+  
+  df1 <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
     cleanNames() %>%
     select(texto_breve_de_material,
            grupo_de_materiales, 17,
@@ -40,6 +44,23 @@ read_data <- function(type = 1) {
                              "level2lab","level2",
                              "level3lab","level3",
                              "level4lab","level4")) %>%
+    mutate(code = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
+    mutate_all(list(as.character))
+  
+  df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
+    cleanNames() %>%
+    select(descripcion_del_producto, categoria_disensa) %>%
+    rename(product = descripcion_del_producto,
+           code = categoria_disensa) %>%
+    mutate(level1lab = substr(code, 1,2),
+           level2lab = substr(code, 3,5),
+           level3lab = substr(code, 6,8),
+           level4lab = substr(code, 9,11)) %>%
+    left_join(read_codes(), "code") %>%
+    select(any_of(colnames(df1))) %>%
+    mutate_all(list(as.character))
+  
+  df <- bind_rows(df1, df2) %>%
     mutate(chain2 = paste(level1, level2, sep = " > "),
            chain3 = paste(level1, level2, level3, sep = " > "),
            chain4 = paste(level1, level2, level3, level4, sep = " > "),
@@ -47,13 +68,14 @@ read_data <- function(type = 1) {
     arrange(chain) %>%
     distinct(.keep_all = TRUE) %>%
     as_tibble()
+  
+  return(df)
+  
 }
 
 # Prepare XLSX data
 prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
-  if (type == 1) df <- cats[,(level + 1)]
-  if (type == 2) df <- cats[,(level + 8)]
-  df %>%
+  cats[,(level + 9)] %>%
     cbind(cleanText(cats$product)) %>%
     cbind(cleanText(cats$chain)) %>%
     magrittr::set_colnames(c("category", "product", "chain")) %>%
@@ -67,7 +89,10 @@ prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
 
 # Print summary
 summary_data <- function(df, cats) {
-  print(paste("Using:", formatNum(100*nrow(df)/nrow(cats), pos = "%")))
+  message(paste("Products:", formatNum(nrow(df), 0)))
+  message(paste("Total categories:", length(unique(cats$code))))
+  message(paste("Categories (used):", length(unique(df$category))))
+  message(paste("Data used:", formatNum(100*nrow(df)/nrow(cats), pos = "%")))
   freqs(df, category) %>% clean_label("category") %>% print
 }
 
