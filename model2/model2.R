@@ -19,6 +19,8 @@ df <- prepare_data(cats, level = level,
 # Print summary and most frequents
 summary_data(df, cats)
 
+#df <- df %>% mutate(category = gsub("\\.\\..*", "", category))
+
 # Tokenize: Break labels into sequence of words
 words <- h2o_tokenize(df$product, 
                       dropnumwords = dropnumwords, 
