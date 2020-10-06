@@ -67,8 +67,8 @@ prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
 
 # Print summary
 summary_data <- function(df, cats) {
-  freqs(df, category) %>% clean_label("category") %>% print
   print(paste("Using:", formatNum(100*nrow(df)/nrow(cats), pos = "%")))
+  freqs(df, category) %>% clean_label("category") %>% print
 }
 
 # Convert sentences into tokenized words
