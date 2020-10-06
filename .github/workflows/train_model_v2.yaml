@@ -9,7 +9,7 @@ on:
   
 jobs:
   Training:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -18,13 +18,13 @@ jobs:
       - uses: r-lib/actions/setup-r@master
 
       - uses: r-lib/actions/setup-pandoc@master
-      
-      - name: Cache R packages
-      uses: actions/cache@v2
-      with:
-        path: ${{ env.R_LIBS_USER }}
-        key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-        restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+        
+      - uses: actions/cache@v2
+        with:
+          path: ~/.local/share/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
 
       - name: Install libraries
         run: |
