@@ -4,7 +4,7 @@ params <- list(
   level = 4,
   type = 2,
   min_per_cat = 10,
-  dropnumwords = FALSE,
+  dropnumwords = TRUE,
   minchar = 1,
   w2v.epochs = 16,
   w2v.window = 6,
