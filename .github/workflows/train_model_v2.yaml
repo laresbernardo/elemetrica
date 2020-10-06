@@ -23,12 +23,13 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/Library/Application Support/renv
-          key: ${{ runner.os }}-renv2-${{ hashFiles('**/renv.lock') }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
             ${{ runner.os }}-renv2-
 
       - name: Install libraries
         run: |
+          install.packages("devtools")
           devtools::install_github("laresbernardo/lares")
         shell: Rscript {0}
         
