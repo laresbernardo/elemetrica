@@ -45,7 +45,8 @@ read_data <- function() {
                              "level3lab","level3",
                              "level4lab","level4")) %>%
     mutate(code = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
-    mutate_all(list(as.character))
+    mutate_all(list(as.character)) %>%
+    mutate(source = 1)
   
   df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
     cleanNames() %>%
@@ -58,7 +59,8 @@ read_data <- function() {
            level4lab = substr(code, 9,11)) %>%
     left_join(read_codes(), "code") %>%
     select(any_of(colnames(df1))) %>%
-    mutate_all(list(as.character))
+    mutate_all(list(as.character)) %>%
+    mutate(source = 2)
   
   df <- bind_rows(df1, df2) %>%
     mutate(chain2 = paste(level1, level2, sep = " > "),
@@ -78,7 +80,8 @@ prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
   cats[,(level + 9)] %>%
     cbind(cleanText(cats$product)) %>%
     cbind(cleanText(cats$chain)) %>%
-    magrittr::set_colnames(c("category", "product", "chain")) %>%
+    cbind(cleanText(cats$source)) %>%
+    magrittr::set_colnames(c("category", "product", "chain", "source")) %>%
     mutate(category = cleanText(category, spaces = "."),
            product = cleanText(product, spaces = ".")) %>%
     filter(!is.na(category)) %>%
@@ -89,11 +92,11 @@ prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
 
 # Print summary
 summary_data <- function(df, cats) {
-  message(paste("Products:", formatNum(nrow(df), 0)))
-  message(paste("Total categories:", length(unique(cats$code))))
-  message(paste("Categories (used):", length(unique(df$category))))
-  message(paste("Data used:", formatNum(100*nrow(df)/nrow(cats), pos = "%")))
-  freqs(df, category) %>% clean_label("category") %>% print
+  list(product = nrow(df),
+       categories = length(unique(cats$code)),
+       categories_used = length(unique(df$category)),
+       data_used = round(nrow(df)/nrow(cats), 4),
+       most_freq = freqs(df, category) %>% clean_label("category"))
 }
 
 # Convert sentences into tokenized words
@@ -162,4 +165,22 @@ clean_label <- function(x, label = "label") {
     x[,var] <- vector 
   }
   return(x)
+}
+
+save_log <- function(params, save = TRUE, print = TRUE) {
+  temp <- params[["data"]]
+  df <- data.frame(
+    metric = c(names(params), names(temp)),
+    value = c(unlist(params), unlist(temp))) %>%
+    mutate(label = paste(metric, value, sep = ":"))
+  log_tab <- data.frame(time = Sys.time()) %>%
+    cbind(tidyr::spread(df %>% select(-label), metric, value))
+  log_txt <- df %>% pull(label) %>% paste(collapse = " ")
+  log_txt <- paste(Sys.time(), log_txt)
+  if (save) write.table(
+    log_tab, 
+    file = "resultslog.csv", sep = ",", 
+    append = TRUE, quote = FALSE,
+    col.names = FALSE, row.names = FALSE)
+  if (print) print(log_txt)
 }

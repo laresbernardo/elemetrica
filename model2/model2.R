@@ -9,18 +9,18 @@ params <- list(
   w2v.window = 6,
   w2v.vecs = 150,
   models = 1,
-  train_p = 0.7,
+  train_p = 1,
   exclude_algos = NULL,
-  include_algos = "DRF")
+  include_algos = "DRF",
+  save = TRUE)
 
 # Read the data
 cats <- read_data()
 # Prepare dataset
-df <- prepare_data(cats, 
-                   level = params$level, 
-                   minimum = params$min_per_cat)
+df <- prepare_data(cats, level = params$level, minimum = params$min_per_cat)
 # Print summary and most frequents
-summary_data(df, cats)
+params[["data"]] <- summary_data(df, cats)
+print(params$data)
 
 # Tokenize: Break labels into sequence of words
 words <- h2o_tokenize(df$product, 
@@ -41,7 +41,7 @@ data <- df %>% bind_cols(as.data.frame(w2v.model$vectors)) %>% filter(!is.na(C1)
 modelx <- h2o_automl(
   data, 
   y = "category", 
-  ignore = c("product", "chain"),
+  ignore = c("product", "chain", "source"),
   max_models = params$models,
   split = params$train_p,
   exclude_algos = params$exclude_algos,
@@ -55,6 +55,8 @@ model <- modelx
 # Save performance results
 params[["model_name"]] <- model$model_name
 params[["results"]] <- model$metrics$metrics
+# Create a quick log
+save_log(params, save = params$save, print = TRUE)
 # (Brag) show results!
 print(params)
 
