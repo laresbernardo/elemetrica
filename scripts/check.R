@@ -17,3 +17,17 @@ hist(new$probability)
 write.csv(new, "data_preds/test3.csv")
 
 freqs(new$category)
+
+############
+logs <- read.csv("resultslog.csv")
+
+# Accuracy-Coverage Curve
+logs[7:14,] %>%
+  ggplot(aes(x = categories_used, y = ACC, group = 1)) +
+  geom_line() + geom_point() +
+  ylim(0, 1) +
+  labs(title = "Accuracy-Coverage Curve",
+       y = "Prediction accuracy",
+       x = "Number of categories used",
+       caption = "Using 70% of the database + tested with 30% untrained data") +
+  theme_lares()
