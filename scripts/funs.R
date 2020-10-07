@@ -79,7 +79,8 @@ read_data <- function() {
 }
 
 # Prepare XLSX data
-prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
+prepare_data <- function(cats, level = 1, sample_p = 1, minimum = 5, type = 1) {
+  set.seed(0)
   cats[,paste0("chain", level)] %>%
     cbind(cleanText(cats$product)) %>%
     cbind(toupper(cats$code)) %>%
@@ -87,10 +88,12 @@ prepare_data <- function(df, level = 1, minimum = 5, type = 1) {
     magrittr::set_colnames(c("category", "product", "chain", "source")) %>%
     mutate(category = cleanText(category, spaces = "."),
            product = cleanText(product, spaces = ".")) %>%
+    sample_n(round(nrow(cats) * sample_p)) %>%
     filter(!is.na(category)) %>%
     categ_reducer(category, nmin = minimum, other_label = "less_than_min") %>%
     filter(category != "less_than_min") %>%
-    mutate(category = as.factor(category))
+    mutate(category = as.factor(category)) %>%
+    as_tibble()
 }
 
 # Print summary
@@ -98,8 +101,7 @@ summary_data <- function(df, cats) {
   list(products = nrow(df),
        categories = length(unique(cats$code)),
        categories_used = length(unique(df$category)),
-       data_used = round(nrow(df)/nrow(cats), 4),
-       most_freq = freqs(df, category) %>% clean_label("category"))
+       data_used = round(nrow(df)/nrow(cats), 4))
 }
 
 # Convert sentences into tokenized words
@@ -130,7 +132,7 @@ h2o_tokenize <- function(x,
 # Train word2vec model
 h2o_word2vec <- function(words, aggregate_method = "AVERAGE", ...) {
   # Build word2vec model
-  w2v.model <- h2o.word2vec(words, ...)
+  w2v.model <- quiet(h2o.word2vec(words, ...))
   # Calculate vectors for each label
   df.h2o.vecs <- h2o.transform(w2v.model, words, aggregate_method = aggregate_method)
   return(list(model = w2v.model, vectors = df.h2o.vecs))
@@ -171,15 +173,24 @@ clean_label <- function(x, label = "label") {
 }
 
 save_log <- function(params, save = TRUE, print = TRUE) {
-  params[["data"]]$most_freq <- NULL
+  
   df <- suppressWarnings(bind_cols(params))
   log_tab <- data.frame(time = as.character(Sys.time())) %>% cbind(df)
-  file <- "resultslog.csv"
-  col.names <- !file.exists(file)
-  if (save) suppressWarnings(write.table(
-    log_tab, file = file, sep = ",", 
-    append = TRUE, quote = FALSE,
-    col.names = col.names, row.names = FALSE))
-  log_txt <- paste(names(log_tab), log_tab, sep = ":", collapse = "|")
-  if (print) print(log_txt)
+  
+  if (print) {
+    log_txt <- paste(names(log_tab), log_tab, sep = ":", collapse = "|")
+    print(log_txt)
+  } 
+  
+  if (save) {
+    file <- "resultslog.csv"
+    if (file.exists(file)) {
+      old <- read.csv(file)
+      if (log_tab$model_name %in% old$model_name)
+        return(invisible(NULL))
+      log_tab <- bind_rows(old, log_tab)
+    }
+    write.csv(log_tab, file = file, row.names = FALSE)  
+  }
+  
 }

@@ -1,23 +1,33 @@
 source("scripts/funs.R")
 
 params <- list(
-  level = 4,
-  min_per_cat = 10,
+  # How many levels to include in the chain?
+  level = 4, 
+  # Minimum products per category allowed (default: 10)
+  min_per_cat = 10, 
+  # Tokenize options
   dropnumwords = FALSE,
   minchar = 1,
+  # word2vec options
   w2v.epochs = 16,
   w2v.window = 6,
-  w2v.vecs = 150,
-  models = 1,
-  train_p = 1,
-  exclude_algos = NULL,
-  include_algos = "DRF",
-  save = TRUE)
+  w2v.vecs = 100, 
+  # modeling options
+  models = 3, # How many models to train and select the best?
+  sample_p = 0.5, # Percentage of the data to use (default: 1)
+  train_p = 0.7, # Test size for tuning parameters (default: 0.7)
+  exclude_algos = c("DeepLearning","XGBoost"), # Exclude algos (default: c("StackedEnsemble","DeepLearning"))
+  include_algos = NULL, # Include algos
+  save = TRUE # Save results into CSV
+) 
 
 # Read the data
 cats <- read_data()
 # Prepare dataset
-df <- prepare_data(cats, level = params$level, minimum = params$min_per_cat)
+df <- prepare_data(cats, 
+                   level = params$level, 
+                   sample_p = params$sample_p,
+                   minimum = params$min_per_cat)
 # Print summary and most frequents
 params[["data"]] <- summary_data(df, cats)
 print(params$data)
@@ -35,7 +45,7 @@ w2v.model <- h2o_word2vec(words,
                           vec_size = params$w2v.vecs) 
 
 # Prepare training & validation data (keep only labels made of known words)
-data <- df %>% bind_cols(as.data.frame(w2v.model$vectors)) %>% filter(!is.na(C1))
+data <- df %>% bind_cols(as.data.frame(w2v.model$vectors)) %>% filter(!is.na(.data$C1))
 
 # Train model
 modelx <- h2o_automl(
@@ -49,17 +59,16 @@ modelx <- h2o_automl(
   thresh = 1000, 
   start_clean = FALSE,
   plots = FALSE)
+
 # Select model object
 model <- modelx
 # Show and save performance results
 params[["model_name"]] <- model$model_name
 params[["results"]] <- model$metrics$metrics
-print(model$model@model$cross_validation_metrics_summary)
+print(model$model@model$cross_validation_metrics_summary[,1:2])
 
-# Create a quick log
-save_log(params, save = params$save, print = TRUE)
 # (Brag) show results!
-print(params)
+save_log(params, save = params$save, print = TRUE) 
 
 
 #############################################
