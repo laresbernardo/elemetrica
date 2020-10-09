@@ -19,67 +19,103 @@ read_codes <- function() {
 }
 
 # Import XLSX file
-read_data <- function() {
+read_data <- function(type = 3) {
   
-  # if (type == 1)
-  #   df <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
-  #     cleanNames() %>%
-  #     select(texto_breve_de_material, x28, x30, x32) %>%
-  #     rename(product = texto_breve_de_material,
-  #            level1 = x28,
-  #            level2 = x30,
-  #            level3 = x32) %>%
-  #     mutate(chain = paste(level1, level2, level3, sep = " > "),
-  #            level2 = paste(level1, level2, sep = " > "))
+  if (type == 1) {
+    df <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
+      cleanNames() %>%
+      select(texto_breve_de_material, x28, x30, x32) %>%
+      rename(product = texto_breve_de_material,
+             level1 = x28,
+             level2 = x30,
+             level3 = x32) %>%
+      mutate(chain = paste(level1, level2, level3, sep = " > "),
+             level2 = paste(level1, level2, sep = " > ")) 
+  }
   
-  df1 <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
-    cleanNames() %>%
-    select(texto_breve_de_material,
-           grupo_de_materiales, 17,
-           grupo_de_material_2, x22,
-           grupo_de_material_3, x24,
-           grupo_de_material_4, x26) %>%
-    magrittr::set_colnames(c("product",
-                             "level1lab","level1",
-                             "level2lab","level2",
-                             "level3lab","level3",
-                             "level4lab","level4")) %>%
-    mutate(code = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
-    filter(!is.na(level1)) %>%
-    mutate_all(list(as.character)) %>%
-    mutate(source = 1)
+  if (type == 2) {
+    df1 <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
+      cleanNames() %>%
+      select(texto_breve_de_material,
+             grupo_de_materiales, 17,
+             grupo_de_material_2, x22,
+             grupo_de_material_3, x24,
+             grupo_de_material_4, x26) %>%
+      magrittr::set_colnames(c("product",
+                               "level1lab","level1",
+                               "level2lab","level2",
+                               "level3lab","level3",
+                               "level4lab","level4")) %>%
+      mutate(code = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
+      filter(!is.na(level1)) %>%
+      mutate_all(list(as.character)) %>%
+      mutate(source = 1)
+    
+    df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
+      cleanNames() %>%
+      select(descripcion_del_producto, categoria_disensa) %>%
+      rename(product = descripcion_del_producto,
+             code = categoria_disensa) %>%
+      mutate(level1lab = substr(code, 1,2),
+             level2lab = substr(code, 3,5),
+             level3lab = substr(code, 6,8),
+             level4lab = substr(code, 9,11)) %>%
+      left_join(read_codes(), "code") %>%
+      filter(!is.na(level1)) %>%
+      select(any_of(colnames(df1))) %>%
+      mutate_all(list(as.character)) %>%
+      mutate(source = 2)
+    
+  }
   
-  df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
-    cleanNames() %>%
-    select(descripcion_del_producto, categoria_disensa) %>%
-    rename(product = descripcion_del_producto,
-           code = categoria_disensa) %>%
-    mutate(level1lab = substr(code, 1,2),
-           level2lab = substr(code, 3,5),
-           level3lab = substr(code, 6,8),
-           level4lab = substr(code, 9,11)) %>%
-    left_join(read_codes(), "code") %>%
-    filter(!is.na(level1)) %>%
-    select(any_of(colnames(df1))) %>%
-    mutate_all(list(as.character)) %>%
-    mutate(source = 2)
+  if (type == 3) {
+    df1 <- read.xlsx("data_raw/catalogoDisensaLimpia.xlsx") %>%
+      cleanNames() %>%
+      rename(product = texto_breve_de_material,
+             code = cod,
+             level1 = name_level_1, level1lab = grupo_de_materiales,
+             level2 = name_level_2, level2lab = grupo_de_material_2,
+             level3 = name_level_3, level3lab = grupo_de_material_3,
+             level4 = name_level_4, level4lab = grupo_de_material_4) %>%
+      select(product, code, 
+             starts_with("level"),
+             starts_with("chain")) %>%
+      mutate(source = 3)
+    
+    df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
+      cleanNames() %>%
+      select(descripcion_del_producto, categoria_disensa) %>%
+      rename(product = descripcion_del_producto,
+             code = categoria_disensa) %>%
+      mutate(level1lab = substr(code, 1,2),
+             level2lab = substr(code, 3,5),
+             level3lab = substr(code, 6,8),
+             level4lab = substr(code, 9,11)) %>%
+      left_join(read_codes(), "code") %>%
+      filter(!is.na(level1)) %>%
+      select(any_of(colnames(df1))) %>%
+      mutate_all(list(as.character)) %>%
+      mutate(source = 2)
+    
+    df <- bind_rows(df1, df2) %>%
+      mutate(
+        chain1 = level1,
+        chain2 = paste(level1, level2, sep = " > "),
+        chain3 = paste(level1, level2, level3, sep = " > "),
+        chain4 = paste(level1, level2, level3, level4, sep = " > "))
+  }
   
-  df <- bind_rows(df1, df2) %>%
-    mutate(
-      chain1 = level1,
-      chain2 = paste(level1, level2, sep = " > "),
-      chain3 = paste(level1, level2, level3, sep = " > "),
-      chain4 = paste(level1, level2, level3, level4, sep = " > ")) %>%
+  df <- df %>%
     arrange(code) %>%
     distinct(.keep_all = TRUE) %>%
-    as_tibble()
+    as_tibble() 
   
   return(df)
   
 }
 
 # Prepare XLSX data
-prepare_data <- function(cats, level = 1, sample_p = 1, minimum = 5, type = 1) {
+prepare_data <- function(cats, level = 1, sample_p = 1, minimum = 10, type = 1) {
   set.seed(0)
   cats[,paste0("chain", level)] %>%
     cbind(cleanText(cats$product)) %>%
@@ -144,22 +180,20 @@ h2o_word2vec.predict <- function(x, w2v, model, clean = FALSE, top = 5, ...) {
   result <- as.data.frame(quiet(h2o.predict(model, label.vec)))
   result$label <- x
   if (clean) result <- clean_predict(result, top = top)
+  result$id <- 1:nrow(result)
   return(result)
 }
 
 clean_predict <- function(x, top = 5) {
   x %>% 
     select(-predict) %>%
-    tidyr::gather("category", "probability", -label) %>% 
-    arrange(desc(probability)) %>%
-    mutate(cumprob = cumsum(probability)) %>%
-    clean_label %>%
-    group_by(label) %>%
-    mutate(rank = row_number()) %>%
+    mutate(id = row_number()) %>%
+    tidyr::gather("category", "probability", -label, -id) %>% 
+    arrange(id, desc(probability)) %>%
+    group_by(id) %>%
     slice(1:top) %>%
-    ungroup() %>%
     clean_label(label = "category") %>%
-    if (top == 1) select(., -cumprob) else .
+    select(2,1,3,4)
 }
 
 clean_label <- function(x, label = "label") {

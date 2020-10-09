@@ -1,6 +1,7 @@
 source("scripts/funs.R")
 
 params <- list(
+  type = 3, # Data sources
   # How many levels to include in the chain?
   level = 4, 
   # Minimum products per category allowed (default: 10)
@@ -11,18 +12,18 @@ params <- list(
   # word2vec options
   w2v.epochs = 16,
   w2v.window = 6,
-  w2v.vecs = 100, 
+  w2v.vecs = 150, 
   # modeling options
   models = 1, # How many models to train and select the best?
-  sample_p = 0.7, # Percentage of the data to use (default: 1)
-  train_p = 0.7, # Test size for tuning parameters (default: 0.7)
+  sample_p = 1, # Percentage of the data to use (default: 1)
+  train_p = 1, # Test size for tuning parameters (default: 0.7)
   exclude_algos = NULL, # Exclude algos (default: c("StackedEnsemble","DeepLearning"))
   include_algos = "DRF", # Include algos
   save = TRUE # Save results into CSV
 ) 
 
 # Read the data
-cats <- read_data()
+cats <- read_data(type = params$type)
 # Prepare dataset
 df <- prepare_data(cats, 
                    level = params$level, 
@@ -58,18 +59,28 @@ modelx <- h2o_automl(
   include_algos = params$include_algos,
   thresh = 1000, 
   start_clean = FALSE,
-  plots = FALSE)
+  plots = FALSE
+); stop <- toc("h2o_automl", quiet = TRUE)
 
 # Select model object
 model <- modelx
 # Show and save performance results
 params[["model_name"]] <- model$model_name
 params[["results"]] <- model$metrics$metrics
+params[["train_time"]] <- stop$time
 print(model$model@model$cross_validation_metrics_summary[,1:2])
 
 # (Brag) show results!
 save_log(params, save = params$save, print = TRUE) 
 
+
+############ EXPORT MODELS
+export_results(
+  model, thresh = 1000, subdir = "MOJOs",
+  which = c("txt", "mojo"))
+export_results(
+  w2v.model$model, thresh = 1000, subdir = "MOJOs",
+  which = c("mojo"))
 
 #############################################
 # TEST ZONE
