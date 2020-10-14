@@ -28,6 +28,7 @@ jobs:
       - name: Install libraries
         run: |
           install.packages("devtools")
+          install.packages("word2vec")
           devtools::install_github("laresbernardo/lares")
         shell: Rscript {0}
         
