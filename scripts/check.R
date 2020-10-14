@@ -1,26 +1,33 @@
-prod <- read.xlsx("data_raw/productos_disensa_30%.xlsx", "Todos los locales") %>%
-  mutate(product = cleanText(`Descripción.del.Producto`),
+# Global functions
+source("scripts/funs.R")
+# Define model parameters
+source("scripts/params.R")
+
+prod <- read.xlsx("data_raw/Productos_Candidatos_30_corregidos.xlsx", "Todos") %>%
+  cleanNames() %>%
+  mutate(product = cleanText(descripcion_del_producto),
          row_id = row_number(),
-         internal = `Codigo.Elemetrica`)
-nrow(prod)
+         internal = codigo_producto_solo_elemetrica)
 
 # Run predictions
-new <-  h2o_word2vec.predict(prod$product, w2v.model$model, model$model, clean = TRUE, top = 1)
+new <-  h2o_word2vec.predict(prod$product, w2v.model$model, model$model, 
+                             params = params, clean = TRUE, top = 1)
 hist(new$probability)
+mean(new$probability)
 head(new, 10)
 
+# Check random products
+new %>% ungroup() %>% sample_n(20) %>% arrange(desc(probability))
+
 # Export into a CSV
-write.csv(new, "data_preds/test_v5.csv")
+write.csv(new, "data_preds/test_v5.2.csv")
 
 # Check specific inputs
-h2o_word2vec.predict("MORTERO 40 kg", w2v.model$model, model$model, clean = TRUE, top = 5)
+h2o_word2vec.predict("MORTERO 40 kg", w2v.model$model, model$model, params = params, clean = TRUE, top = 5)
 
 df %>% clean_label("category") %>% 
   filter(grepl("morteros", category)) %>% 
   select(product, category) 
-
-# Check random products
-new %>% ungroup() %>% sample_n(20) %>% arrange(desc(probability)) 
 
 # Visualize results
 ggplot(new, aes(x = reorder(category, probability), y = probability)) +
@@ -42,8 +49,23 @@ logs[7:13,] %>%
   theme_lares() +
   scale_y_percent()
 
-lares::export_results(
-  model, thresh = 1000, subdir = "MOJOs",
-  which = c("txt", "mojo"))
 
-h2o.download_mojo(w2v.model$model, path = "MOJOs", get_genmodel_jar = TRUE)
+# USE MOJO FILES TO PREDICT
+temp <-  h2o_word2vec.predict(
+  x = prod$product[1:100], 
+  w2v = w2v.model$model, 
+  model = "MOJOs/DRF_1_AutoML_20201009_163058",
+  params = params, 
+  clean = TRUE)
+hist(temp$probability)
+
+h2o::h2o.findSynonyms(w2v.model$model, as.h2o("mortero"), 10)
+
+# ADD INTERNAL CODES
+gs <- readGS("Elemétrica: Timetable", "TopProducts")
+labeled_gs <- gs %>% left_join(
+  cats %>% mutate(chain4 = cleanText(cats$chain4, spaces = ".")) %>% 
+    clean_label("chain4") %>%
+    select(chain4, code) %>% distinct(), 
+  by = c("Predicción" = "chain4"))
+writeGS(select(labeled_gs, code), "Elemétrica: Timetable", "Temp")

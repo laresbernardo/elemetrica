@@ -1,26 +1,7 @@
+# Global functions
 source("scripts/funs.R")
-
-params <- list(
-  type = 3, # Data sources
-  # How many levels to include in the chain?
-  level = 4, 
-  # Minimum products per category allowed (default: 10)
-  min_per_cat = 10, 
-  # Tokenize options
-  dropnumwords = FALSE,
-  minchar = 1,
-  # word2vec options
-  w2v.epochs = 16,
-  w2v.window = 6,
-  w2v.vecs = 150, 
-  # modeling options
-  models = 1, # How many models to train and select the best?
-  sample_p = 1, # Percentage of the data to use (default: 1)
-  train_p = 1, # Test size for tuning parameters (default: 0.7)
-  exclude_algos = NULL, # Exclude algos (default: c("StackedEnsemble","DeepLearning"))
-  include_algos = "DRF", # Include algos
-  save = TRUE # Save results into CSV
-) 
+# Define model parameters
+source("scripts/params.R")
 
 # Read the data
 cats <- read_data(type = params$type)
@@ -37,6 +18,7 @@ print(params$data)
 words <- h2o_tokenize(df$product, 
                       dropnumwords = params$dropnumwords, 
                       minchar = params$minchar, 
+                      splitcharnums = params$splitcharnums,
                       stop_words = STOP_WORDS)
 
 # Create word2vector model
@@ -47,6 +29,7 @@ w2v.model <- h2o_word2vec(words,
 
 # Prepare training & validation data (keep only labels made of known words)
 data <- df %>% bind_cols(as.data.frame(w2v.model$vectors)) %>% filter(!is.na(.data$C1))
+head(data)
 
 # Train model
 modelx <- h2o_automl(
@@ -65,14 +48,17 @@ modelx <- h2o_automl(
 # Select model object
 model <- modelx
 # Show and save performance results
+scores <- clean_predict(model$scores_test %>% rename(predict = score, label = tag), top = 1)
 params[["model_name"]] <- model$model_name
 params[["results"]] <- model$metrics$metrics
-params[["train_time"]] <- stop$time
+params[["train_time"]] <- round(stop$time/60, 2)
+params[["acc_cv"]] <- model$model@model$cross_validation_metrics_summary$mean[1]
+params[["err_cv"]] <- model$model@model$cross_validation_metrics_summary$mean[7]
+params[["mean_prob"]] <- mean(scores$probability)
 print(model$model@model$cross_validation_metrics_summary[,1:2])
 
 # (Brag) show results!
 save_log(params, save = params$save, print = TRUE) 
-
 
 ############ EXPORT MODELS
 export_results(
@@ -105,14 +91,14 @@ export_results(
 # 
 # # Manual testings
 # sample_n(df, 10) %>% clean_label(c("product","category"))
-# h2o_word2vec.predict("tubo pvc", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("tubo cpvc", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("extension electrica", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("botas de seguridad", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("martillo", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("lija", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("tijera", w2v.model$model, model$model, clean = TRUE)
-# h2o_word2vec.predict("cerradura", w2v.model$model, model$model, clean = TRUE)
+# h2o_word2vec.predict("tubo pvc", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("tubo cpvc", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("extension electrica", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("botas de seguridad", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("martillo", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("lija", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("tijera", w2v.model$model, model$model, params = params, clean = TRUE)
+# h2o_word2vec.predict("cerradura", w2v.model$model, model$model, params = params, clean = TRUE)
 # 
 # model$scores_test %>%
 #   mutate(correct = tag == score) %>%
