@@ -18,9 +18,9 @@ params <- list(
   w2v.window = 6, # Default: 6
   w2v.vecs = 100,  # Default: 100
   # modeling options
-  models = 1, # How many models to train and select the best?
+  models = 2, # How many models to train and select the best?
   sample_p = 1, # Percentage of the data to use (default: 1)
-  train_p = 0.7, # Test size for tuning parameters (default: 0.7)
+  train_p = 1, # Test size for tuning parameters (default: 0.7)
   exclude_algos = NULL, # Exclude algos (default: c("StackedEnsemble","DeepLearning"))
   include_algos = "DRF", # Include algos
   save = TRUE, # Save results into CSV
