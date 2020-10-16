@@ -11,12 +11,12 @@ params <- list(
   # Tokenize options
   dropnumwords = FALSE, # Default: FALSE
   minchar = 1, # Default: 1
-  splitcharnums = FALSE, # Default: FALSE
+  splitcharnums = TRUE, # Default: FALSE
   add_units = FALSE, # Adds regex cols for units
   # word2vec options
-  w2v.epochs = 16, # Default: 16
-  w2v.window = 6, # Default: 6
-  w2v.vecs = 100,  # Default: 100
+  w2v.epochs = 20, # Default: 16
+  w2v.window = 5, # Default: 6
+  w2v.vecs = 150,  # Default: 100
   # modeling options
   models = 1, # How many models to train and select the best?
   sample_p = 1, # Percentage of the data to use (default: 1)

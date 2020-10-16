@@ -1,0 +1,1220 @@
+$category
+                                                                                                            category
+1                                    trd.acabados..trd.banos..trd.accesorios.y.repuestos..trd.asientos.para.inodoros
+2                                      trd.acabados..trd.banos..trd.accesorios.y.repuestos..trd.juegos.de.accesorios
+3                                                          trd.acabados..trd.banos..trd.loza.sanitaria..trd.inodoros
+4                                                        trd.acabados..trd.banos..trd.loza.sanitaria..trd.lavatorios
+5                                               trd.acabados..trd.electrogas.hogar..trd.calentadores..trd.electricos
+6                                                      trd.acabados..trd.electrogas.hogar..trd.calentadores..trd.gas
+7                                             trd.acabados..trd.electrogas.hogar..trd.electrodomesticos..trd.estufas
+8                                  trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.complementos.griferia
+9                                                  trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.ducha
+10                                             trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.fregadero
+11                                             trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.lavatorio
+12                                              trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.regadera
+13                                                      trd.acabados..trd.hogar..trd.camping..trd.bombas.para.inflar
+14                                              trd.acabados..trd.hogar..trd.cocina..trd.fregaderos.acero.inoxidable
+15                                                  trd.acabados..trd.hogar..trd.complemento.hogar..trd.varios.hogar
+16                                                     trd.acabados..trd.hogar..trd.electrodomesticos..trd.hornillas
+17                                                     trd.acabados..trd.hogar..trd.electrodomesticos..trd.repuestos
+18                                                             trd.acabados..trd.hogar..trd.limpieza..trd.accesorios
+19                                                               trd.acabados..trd.hogar..trd.limpieza..trd.cepillos
+20                                                 trd.acabados..trd.hogar..trd.limpieza..trd.escobas.y.palo.de.piso
+21                          trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.adhesivos
+22                            trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.brochas
+23                             trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.estopa
+24                        trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.extensiones
+25                  trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.marcos.y.rodillos
+26                       trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.masking.tape
+27                               trd.acabados..trd.pinturas.y.recubrimientos..trd.impermeabilizantes..trd.exteriores
+28                              trd.acabados..trd.pinturas.y.recubrimientos..trd.pinturas..trd.pintura.acrilica.agua
+29                            trd.acabados..trd.pinturas.y.recubrimientos..trd.pinturas..trd.pintura.alkidica.aceite
+30                                   trd.acabados..trd.pinturas.y.recubrimientos..trd.pinturas..trd.pintura.en.spray
+31                               trd.acabados..trd.pinturas.y.recubrimientos..trd.recubrimientos..trd.revestimientos
+32                                      trd.acabados..trd.pinturas.y.recubrimientos..trd.recubrimientos..trd.stuccos
+33                                         trd.acabados..trd.pinturas.y.recubrimientos..trd.selladores..trd.concreto
+34                                                  trd.acabados..trd.pisos.y.azulejos..trd.aplicadores..trd.fraguas
+35                                                        trd.acabados..trd.pisos.y.azulejos..trd.cenefas..trd.tacos
+36                                                    trd.acabados..trd.pisos.y.azulejos..trd.listelos..trd.listelos
+37                                                       trd.acabados..trd.pisos.y.azulejos..trd.pisos..trd.ceramica
+38                                               trd.estructura..trd.acero.largos..trd.platinas..trd.barras.de.acero
+39                                             trd.estructura..trd.acero.largos..trd.trefilados..trd.alambre.de.puas
+40                                         trd.estructura..trd.acero.largos..trd.trefilados..trd.alambre.galvanizado
+41                                        trd.estructura..trd.acero.largos..trd.trefilados..trd.clavos.para.concreto
+42                                          trd.estructura..trd.acero.largos..trd.trefilados..trd.clavos.para.madera
+43                                       trd.estructura..trd.acero.largos..trd.trefilados..trd.especiales.trefileria
+44                                           trd.estructura..trd.acero.largos..trd.trefilados..trd.malla.galvanizada
+45                                    trd.estructura..trd.acero.largos..trd.varillas..trd.varilla.deformadacorrugada
+46                                         trd.estructura..trd.acero.planos..trd.perfiles..trd.perfiles.galvanizados
+47                                               trd.estructura..trd.acero.planos..trd.perfiles..trd.perfiles.negros
+48                              trd.estructura..trd.acero.planos..trd.techos.acero..trd.lamina.galvanizada.onduladas
+49                            trd.estructura..trd.acero.planos..trd.techos.acero..trd.lamina.galvanizada.rectangular
+50                                trd.estructura..trd.acero.planos..trd.techos.acero..trd.laminas.galvanizadas.lisas
+51                                      trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.caneria.galv.ced.40
+52                                     trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.caneria.negro.ced.40
+53                                        trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.estructural.negro
+54                                   trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.industrial.galvanizado
+55                                         trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.industrial.negro
+56                                                   trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.pmalla
+57                              trd.estructura..trd.aditivos..impermeab.y.recubrimientos..trd.aditivos..trd.concreto
+58                   trd.estructura..trd.aditivos..impermeab.y.recubrimientos..trd.impermeabilizantes..trd.cubiertas
+59              trd.estructura..trd.aditivos..impermeab.y.recubrimientos..trd.recubrimientos..trd.membranasgeotextil
+60                                          trd.estructura..trd.cementicios..trd.cementicios.derivados..trd.morteros
+61                                               trd.estructura..trd.cementicios..trd.prefabricados..trd.casas.prefa
+62                                             trd.estructura..trd.cementicios..trd.prefabricados..trd.estructurales
+63                                          trd.estructura..trd.cementicios..trd.prefabricados..trd.ladrillo.arcilla
+64                                               trd.estructura..trd.cementicios..trd.prefabricados..trd.mamposteria
+65                                 trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.cpvc..trd.figuras.cpvc
+66                                 trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.cpvc..trd.tuberia.cpvc
+67                            trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.de.cobre..trd.figuras.cobre
+68                            trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.de.cobre..trd.tuberia.cobre
+69                  trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.galvanizada..trd.figuras.galvanizadas
+70                                   trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.ppr..trd.figuras.ppr
+71                                  trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.ppr..trd.tuberias.ppr
+72                                   trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc..trd.figuras.pvc
+73                                   trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc..trd.tuberia.pvc
+74               trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc.sanitaria..trd.figuras.pvc.sanitaria
+75              trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc.sanitaria..trd.tuberias.pvc.sanitaria
+76                                                trd.ferreteria..trd.adhesivos..trd.adhesivos..trd.adhesivos.varios
+77                                          trd.ferreteria..trd.adhesivos..trd.pegamentos..trd.pegamento.de.contacto
+78                                             trd.ferreteria..trd.adhesivos..trd.pegamentos..trd.pegamento.para.pvc
+79                                                       trd.ferreteria..trd.adhesivos..trd.silicones..trd.silicones
+80                                                       trd.ferreteria..trd.adhesivos..trd.tape..trd.doble.contacto
+81                                                                trd.ferreteria..trd.adhesivos..trd.tape..trd.ducto
+82                                              trd.ferreteria..trd.adhesivos..trd.tape..trd.plastico.y.transparente
+83                                           trd.ferreteria..trd.almacenamiento..trd.cajas..trd.cajas.de.herramienta
+84                                         trd.ferreteria..trd.almacenamiento..trd.cajas..trd.contenedores.plasticos
+85                                     trd.ferreteria..trd.almacenamiento..trd.escaleras..trd.escaleras.de.extension
+86                                        trd.ferreteria..trd.almacenamiento..trd.escaleras..trd.escaleras.de.tijera
+87                            trd.ferreteria..trd.automotriz..trd.accesorios.y.repuestos..trd.accesorios.y.repuestos
+88                                trd.ferreteria..trd.automotriz..trd.accesorios.y.repuestos..trd.fajas.industriales
+89                                    trd.ferreteria..trd.automotriz..trd.aditivos.y.aceites..trd.aditivos.y.aceites
+90                                      trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.adaptadores
+91                                      trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.extensiones
+92                                            trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.gatas
+93                               trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.herramientas.otros
+94                                   trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.juego.de.dados
+95                                     trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.llaves.allen
+96                               trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.llaves.hexagonales
+97                                trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.manerales.y.ratch
+98                                  trd.ferreteria..trd.automotriz..trd.llantas..neumaticos..trd.llantas..neumaticos
+99                        trd.ferreteria..trd.automotriz..trd.mantenimiento.y.limpieza..trd.mantenimiento.y.limpieza
+100                                                   trd.ferreteria..trd.cerrajeria..trd.candados..trd.anti.cizalla
+101                                                 trd.ferreteria..trd.cerrajeria..trd.candados..trd.demas.candados
+102                                                     trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.cerrojos
+103                                                  trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.decorativas
+104                                                       trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.gaveta
+105                                                     trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.manivela
+106                                                    trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.picaporte
+107                                                         trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.pomo
+108                                                    trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.seguridad
+109          trd.ferreteria..trd.cerrajeria..trd.complemento.cerrajeria.y.herrajes..trd.varios.cerrajeria.y.herrajes
+110                trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.cincho.plastico..amarras.plasticas
+111                                          trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.enchufes
+112                           trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.extensiones..extensores
+113                                trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.grapas.para.cables
+114                                 trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.guias.para.cables
+115                                            trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.placas
+116                                          trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.switches
+117                trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.tape.y.cintas.electricas.aislantes
+118                                           trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.testers
+119                                           trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.timbres
+120                                   trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.toma.corrientes
+121                              trd.ferreteria..trd.electrico..trd.alarmas.y.detectores..trd.sensores.de.movimiento
+122                                                    trd.ferreteria..trd.electrico..trd.audio.y.video..trd.antenas
+123                                              trd.ferreteria..trd.electrico..trd.audio.y.video..trd.cable.coaxial
+124                                             trd.ferreteria..trd.electrico..trd.conectoresespigas..trd.terminales
+125                                                   trd.ferreteria..trd.electrico..trd.interruptores..trd.de.pared
+126                                            trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.anillos
+127                           trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.arandelas.y.espaciadores
+128                                            trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.ganchos
+129                             trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.grapas.para.engrapador
+130                                    trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.ribetesremaches
+131                                        trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.tachuelones
+132                                              trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.tacos
+133                                                          trd.ferreteria..trd.fijacion..trd.tornillos..trd.estufa
+134                                                    trd.ferreteria..trd.fijacion..trd.tornillos..trd.galvanizados
+135                                                         trd.ferreteria..trd.fijacion..trd.tornillos..trd.maderas
+136                                                        trd.ferreteria..trd.fijacion..trd.tornillos..trd.melamina
+137                                                           trd.ferreteria..trd.fijacion..trd.tornillos..trd.metal
+138                                                    trd.ferreteria..trd.fijacion..trd.tornillos..trd.ojo..abierto
+139                                                           trd.ferreteria..trd.fijacion..trd.tuercas..trd.grado.5
+140                                                trd.ferreteria..trd.fijacion..trd.tuercas..trd.hexagonal..grado.2
+141                          trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.accesorios
+142                  trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.brocas.para.madera
+143                   trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.brocas.para.metal
+144           trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.brocas.para.para.concreto
+145 trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.carbones.para.herramienta.electrica
+146                   trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.discos.de.esmeril
+147                        trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.otros.discos
+148                     trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.atornilladores
+149                             trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.cautin
+150                         trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.cortadoras
+151                       trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.esmeriladora
+152                          trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.lijadoras
+153                      trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.rotomartillos
+154                    trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.sierra.circular
+155                            trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.sierras
+156                           trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.taladros
+157                                      trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.carretillas
+158                                         trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.cinceles
+159               trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.cortadoras.de.azulejo.y.accesorios
+160                                         trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.cucharas
+161                                        trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.espatulas
+162                                         trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.llanetas
+163                                            trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.mazos
+164                                    trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.mazos.de.goma
+165                                          trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.piqueta
+166                                          trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.plomada
+167                                trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.berbiqui..barreno
+168                                         trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.cepillos
+169                                     trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.engrapadoras
+170                                        trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.escuadras
+171                                         trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.formones
+172                                        trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.martillos
+173                                     trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.pata.chancho
+174                                           trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.pinzas
+175                                trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.pistolas.silicone
+176                                          trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.prensas
+177                              trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.prensas.hidraulicas
+178                                        trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.serruchos
+179                           trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cepillos.acero
+180                               trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cortadoras
+181                                trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cuchillas
+182                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cutters
+183                                    trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.limas
+184                             trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.remachadoras
+185                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.segueta
+186                                 trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.sopletes
+187                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.tenazas
+188                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.tijeras
+189                                           trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.alicates
+190                                   trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.destornilladores
+191                                     trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.llaves.caneria
+192                                   trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.llaves.francesas
+193                                     trd.ferreteria..trd.herramientas.manuales..trd.electricista..trd.htas.varias
+194                                    trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.azadon.para.jardin
+195                                              trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.machetes
+196                                     trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.palas.para.jardin
+197                                 trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.rastrillo.para.jardin
+198                                   trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.tijeras.para.jardin
+199                                    trd.ferreteria..trd.herramientas.manuales..trd.juegoscombos..trd.juegoscombos
+200                             trd.ferreteria..trd.herramientas.manuales..trd.medicion.y.trazo..trd.cintas.metricas
+201                                  trd.ferreteria..trd.herramientas.manuales..trd.medicion.y.trazo..trd.marcadores
+202                                     trd.ferreteria..trd.herramientas.manuales..trd.medicion.y.trazo..trd.niveles
+203                       trd.ferreteria..trd.herramientas.manuales..trd.repuestos.herramienta.manual..trd.repuestos
+204                                         trd.ferreteria..trd.herreria.y.herrajes..trd.abrasivos..trd.lija.de.agua
+205                                       trd.ferreteria..trd.herreria.y.herrajes..trd.abrasivos..trd.lija.de.madera
+206                                              trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.bisagras
+207                                             trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.escuadras
+208                                   trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.figuras.para.porton
+209                                               trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.ganchos
+210                                          trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.para.muebles
+211                                              trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.tensores
+212                                     trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.acero.inoxidable
+213                                              trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.alambre
+214                                              trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.caretas
+215                                                  trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.mig
+216                        trd.ferreteria..trd.iluminacion.y.accesorios..trd.accesorios.de.iluminacion..trd.plafones
+217                         trd.ferreteria..trd.iluminacion.y.accesorios..trd.accesorios.de.iluminacion..trd.sockets
+218                 trd.ferreteria..trd.iluminacion.y.accesorios..trd.bombillos.y.reflectores..trd.ahorro.de.energia
+219                       trd.ferreteria..trd.iluminacion.y.accesorios..trd.bombillos.y.reflectores..trd.decorativas
+220                trd.ferreteria..trd.iluminacion.y.accesorios..trd.complemento.iluminacion..trd.varios.iluminacion
+221                                         trd.ferreteria..trd.iluminacion.y.accesorios..trd.fusibles..trd.fusibles
+222                                        trd.ferreteria..trd.iluminacion.y.accesorios..trd.linternas..trd.baterias
+223                          trd.ferreteria..trd.iluminacion.y.accesorios..trd.linternas..trd.cargadores.de.baterias
+224                          trd.ferreteria..trd.iluminacion.y.accesorios..trd.luminaria.industrial..trd.reflectores
+225                             trd.ferreteria..trd.iluminacion.y.accesorios..trd.luminaria.residencial..trd.faroles
+226                            trd.ferreteria..trd.iluminacion.y.accesorios..trd.luminaria.residencial..trd.plafones
+227                         trd.ferreteria..trd.industrial..trd.lubricacion.industrial..trd.lubricantes.industriales
+228                          trd.ferreteria..trd.industrial..trd.transmision.de.potencia..trd.mangueras.industriales
+229                 trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.codos.paga.gas
+230            trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.conectores.para.gas
+231                trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.coples.para.gas
+232           trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.reguladores.para.gas
+233                                                       trd.ferreteria..trd.jardin..trd.accesorios..trd.accesorios
+234                                                          trd.ferreteria..trd.jardin..trd.accesorios..trd.guantes
+235                       trd.ferreteria..trd.jardin..trd.bombas.de.fumigacion..trd.bomba.de.fumigacion.convencional
+236                                                       trd.ferreteria..trd.jardin..trd.irrigacion..trd.aspersores
+237                                                        trd.ferreteria..trd.jardin..trd.irrigacion..trd.mangueras
+238                                            trd.ferreteria..trd.jardin..trd.irrigacion..trd.pistolas.y.accesorios
+239                                       trd.ferreteria..trd.maquinaria.y.equipos..trd.aspiradoras..trd.aspiradoras
+240                           trd.ferreteria..trd.maquinaria.y.equipos..trd.compresores.y.accesorios..trd.accesorios
+241                          trd.ferreteria..trd.maquinaria.y.equipos..trd.compresores.y.accesorios..trd.compresores
+242                                          trd.ferreteria..trd.maquinaria.y.equipos..trd.generadores..trd.gasolina
+243                                 trd.ferreteria..trd.maquinaria.y.equipos..trd.hidrolavadoras..trd.hidrolavadoras
+244                           trd.ferreteria..trd.maquinaria.y.equipos..trd.maquina.de.soldar..trd.maquina.de.soldar
+245                                         trd.ferreteria..trd.maquinaria.y.equipos..trd.podadoras..trd.cortabordes
+246                                          trd.ferreteria..trd.maquinaria.y.equipos..trd.podadoras..trd.de.tractor
+247                                          trd.ferreteria..trd.maquinaria.y.equipos..trd.podadoras..trd.motosierra
+248                                  trd.ferreteria..trd.plomeria..trd.accesorios.de.plomeria..trd.accesorios.varios
+249                                                           trd.ferreteria..trd.plomeria..trd.desague..trd.desague
+250                                        trd.ferreteria..trd.plomeria..trd.motores.y.bombas..trd.proposito.general
+251                                                             trd.ferreteria..trd.plomeria..trd.niples..trd.niples
+252                                                             trd.ferreteria..trd.plomeria..trd.teflon..trd.teflon
+253                                                        trd.ferreteria..trd.plomeria..trd.valvulas..trd.compuerta
+254                                                          trd.ferreteria..trd.plomeria..trd.valvulas..trd.entrada
+255                                                              trd.ferreteria..trd.plomeria..trd.valvulas..trd.pvc
+256                                                       trd.ferreteria..trd.plomeria..trd.valvulas..trd.reguladora
+257                                           trd.ferreteria..trd.plomeria..trd.varios.plomeria..trd.varios.plomeria
+258                                            trd.ferreteria..trd.recreacion..trd.implementos.deportivos..trd.pesca
+259                                         trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.anteojos
+260                                            trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.arnes
+261                                    trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.botas.de.hule
+262                                            trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.capas
+263                                           trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cascos
+264                                         trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.chalecos
+265                                 trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cinta.precaucion
+266                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cinturon.de.herramienta
+267                                       trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cinturones
+268                                            trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.conos
+269                                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.guantes
+270                               trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.malla.de.seguridad
+271                                trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.mascaras..caretas
+272                                         trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.orejeras
+273                                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.rotulos
+274                                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.zapatos
+275                        trd.ferreteria..trd.seguridad.y.proteccion..trd.varios.seguridad.y.proteccion..trd.varios
+276                                                         trd.ferreteria..trd.utilitarios..trd.cadenas..trd.cadena
+277                                              trd.ferreteria..trd.utilitarios..trd.cadenas..trd.cadenas.por.metro
+278                                                      trd.ferreteria..trd.utilitarios..trd.cadenas..trd.grilletes
+279                                                        trd.ferreteria..trd.utilitarios..trd.cadenas..trd.uniones
+280                                                     trd.ferreteria..trd.utilitarios..trd.cedazos..trd.mosquitero
+281                                                   trd.ferreteria..trd.utilitarios..trd.cobertores..trd.manteados
+282                                            trd.ferreteria..trd.utilitarios..trd.sogas..trd.sogas..mecates.varias
+283                                          trd.ferreteria..trd.utilitarios..trd.sogas..trd.sogas.por.metro.mecates
+284                                   trd.obra.gris..trd.construccion.liviana..trd.tablas.livianas..trd.fibrocemento
+285                                         trd.obra.gris..trd.construccion.liviana..trd.tablas.livianas..trd.gypsum
+286                                                            trd.obra.gris..trd.electrico..trd.cables..trd.aislado
+287                                                            trd.obra.gris..trd.electrico..trd.cables..trd.coaxial
+288                                                           trd.obra.gris..trd.electrico..trd.cables..trd.cubierto
+289                                                     trd.obra.gris..trd.electrico..trd.cables..trd.portaelectrodo
+290                                                   trd.obra.gris..trd.electrico..trd.canalizacion..trd.accesorios
+291                                                    trd.obra.gris..trd.electrico..trd.canalizacion..trd.canaletas
+292                                                   trd.obra.gris..trd.electrico..trd.canalizacion..trd.conectores
+293                                                        trd.obra.gris..trd.electrico..trd.canalizacion..trd.gazas
+294                                                        trd.obra.gris..trd.electrico..trd.canalizacion..trd.tubos
+295                                                     trd.obra.gris..trd.electrico..trd.distribucion..trd.breakers
+296                                     trd.obra.gris..trd.electrico..trd.distribucion..trd.cajas.electricas.de.paso
+297                            trd.obra.gris..trd.electrico..trd.distribucion..trd.ctro.carga.monofasicos.empotrados
+298                                                          trd.obra.gris..trd.fosas.y.tanques..trd.fosas..trd.agua
+299                                        trd.obra.gris..trd.puertas.ventanas.y.molduras..trd.puertas..trd.exterior
+300                                        trd.obra.gris..trd.puertas.ventanas.y.molduras..trd.puertas..trd.interior
+301                                       trd.obra.gris..trd.puertas.ventanas.y.molduras..trd.ventanas..trd.aluminio
+302                                               trd.obra.gris..trd.techos.no.metalicos..trd.teja..trd.teja.arcilla
+       n    p
+1     13 0.04
+2     49 0.15
+3     33 0.10
+4     21 0.07
+5     11 0.03
+6     50 0.16
+7     11 0.03
+8    363 1.13
+9     35 0.11
+10   157 0.49
+11    17 0.05
+12   156 0.49
+13    48 0.15
+14    33 0.10
+15    43 0.13
+16    17 0.05
+17    33 0.10
+18    86 0.27
+19    32 0.10
+20    61 0.19
+21    24 0.07
+22   194 0.60
+23    10 0.03
+24    25 0.08
+25   132 0.41
+26    52 0.16
+27    72 0.22
+28    95 0.30
+29    77 0.24
+30   153 0.48
+31   281 0.88
+32    13 0.04
+33    54 0.17
+34    52 0.16
+35    48 0.15
+36    35 0.11
+37    72 0.22
+38    27 0.08
+39    28 0.09
+40    59 0.18
+41   131 0.41
+42   109 0.34
+43    11 0.03
+44   106 0.33
+45    75 0.23
+46    18 0.06
+47    24 0.07
+48   102 0.32
+49    25 0.08
+50    17 0.05
+51    11 0.03
+52    10 0.03
+53    50 0.16
+54    28 0.09
+55    33 0.10
+56    12 0.04
+57    41 0.13
+58    12 0.04
+59   164 0.51
+60    26 0.08
+61    14 0.04
+62   129 0.40
+63    22 0.07
+64    14 0.04
+65   399 1.24
+66    83 0.26
+67   232 0.72
+68    41 0.13
+69   156 0.49
+70   381 1.19
+71    24 0.07
+72   291 0.91
+73   205 0.64
+74    97 0.30
+75    36 0.11
+76    99 0.31
+77    53 0.17
+78    24 0.07
+79    34 0.11
+80    32 0.10
+81    31 0.10
+82    31 0.10
+83   252 0.79
+84    99 0.31
+85    72 0.22
+86    30 0.09
+87    36 0.11
+88    31 0.10
+89    34 0.11
+90    45 0.14
+91   161 0.50
+92    85 0.27
+93   710 2.21
+94  2446 7.63
+95   336 1.05
+96   769 2.40
+97    13 0.04
+98    10 0.03
+99    65 0.20
+100   98 0.31
+101  223 0.70
+102   82 0.26
+103   15 0.05
+104   23 0.07
+105  154 0.48
+106   37 0.12
+107   25 0.08
+108  236 0.74
+109   22 0.07
+110  158 0.49
+111  103 0.32
+112  342 1.07
+113   65 0.20
+114   29 0.09
+115  244 0.76
+116  137 0.43
+117  119 0.37
+118   63 0.20
+119   13 0.04
+120   27 0.08
+121   10 0.03
+122   24 0.07
+123   12 0.04
+124   17 0.05
+125   58 0.18
+126   46 0.14
+127   45 0.14
+128  245 0.76
+129   51 0.16
+130   43 0.13
+131   15 0.05
+132   47 0.15
+133   33 0.10
+134  320 1.00
+135  204 0.64
+136   48 0.15
+137   12 0.04
+138   63 0.20
+139   15 0.05
+140   20 0.06
+141  307 0.96
+142  253 0.79
+143 1008 3.14
+144  287 0.89
+145   60 0.19
+146  582 1.81
+147   58 0.18
+148   17 0.05
+149   35 0.11
+150   51 0.16
+151   74 0.23
+152   24 0.07
+153   95 0.30
+154   19 0.06
+155   52 0.16
+156   43 0.13
+157  287 0.89
+158  323 1.01
+159   95 0.30
+160  107 0.33
+161  172 0.54
+162  124 0.39
+163  231 0.72
+164   26 0.08
+165  123 0.38
+166   43 0.13
+167   10 0.03
+168   15 0.05
+169   31 0.10
+170   65 0.20
+171   59 0.18
+172  252 0.79
+173   38 0.12
+174   36 0.11
+175   47 0.15
+176  137 0.43
+177   17 0.05
+178   88 0.27
+179  128 0.40
+180  118 0.37
+181  104 0.32
+182   69 0.22
+183  226 0.70
+184  159 0.50
+185  119 0.37
+186   23 0.07
+187  151 0.47
+188  144 0.45
+189   83 0.26
+190  726 2.26
+191  508 1.58
+192  240 0.75
+193  290 0.90
+194   51 0.16
+195  132 0.41
+196  317 0.99
+197  121 0.38
+198   29 0.09
+199  898 2.80
+200  231 0.72
+201   71 0.22
+202  164 0.51
+203   45 0.14
+204  167 0.52
+205  168 0.52
+206  222 0.69
+207  116 0.36
+208   42 0.13
+209   24 0.07
+210   68 0.21
+211   73 0.23
+212   20 0.06
+213   26 0.08
+214   53 0.17
+215   10 0.03
+216   17 0.05
+217   33 0.10
+218  104 0.32
+219   61 0.19
+220   32 0.10
+221   36 0.11
+222  124 0.39
+223   14 0.04
+224   90 0.28
+225   13 0.04
+226   10 0.03
+227   48 0.15
+228   21 0.07
+229  127 0.40
+230  156 0.49
+231   41 0.13
+232   17 0.05
+233  190 0.59
+234   59 0.18
+235   38 0.12
+236   74 0.23
+237  248 0.77
+238   71 0.22
+239   24 0.07
+240   53 0.17
+241   46 0.14
+242   10 0.03
+243   48 0.15
+244   56 0.17
+245   42 0.13
+246   12 0.04
+247   16 0.05
+248  436 1.36
+249   70 0.22
+250  102 0.32
+251  136 0.42
+252   31 0.10
+253   24 0.07
+254   33 0.10
+255   29 0.09
+256   94 0.29
+257  158 0.49
+258   18 0.06
+259  115 0.36
+260   58 0.18
+261  229 0.71
+262   60 0.19
+263   62 0.19
+264  115 0.36
+265   89 0.28
+266   23 0.07
+267   46 0.14
+268   23 0.07
+269  188 0.59
+270   18 0.06
+271  107 0.33
+272   37 0.12
+273   56 0.17
+274   12 0.04
+275  135 0.42
+276   51 0.16
+277   77 0.24
+278   27 0.08
+279   10 0.03
+280   22 0.07
+281   67 0.21
+282  143 0.45
+283   15 0.05
+284   38 0.12
+285   10 0.03
+286   88 0.27
+287   29 0.09
+288  183 0.57
+289   22 0.07
+290   24 0.07
+291   25 0.08
+292   33 0.10
+293  167 0.52
+294   18 0.06
+295   48 0.15
+296   17 0.05
+297   28 0.09
+298   55 0.17
+299   13 0.04
+300   11 0.03
+301   24 0.07
+302   19 0.06
+
+$train_test
+  train_test     n   p
+1 train_test 32068 100
+
+$predict
+                                                                                                             predict
+1                                    trd.acabados..trd.banos..trd.accesorios.y.repuestos..trd.asientos.para.inodoros
+2                                      trd.acabados..trd.banos..trd.accesorios.y.repuestos..trd.juegos.de.accesorios
+3                                                          trd.acabados..trd.banos..trd.loza.sanitaria..trd.inodoros
+4                                                        trd.acabados..trd.banos..trd.loza.sanitaria..trd.lavatorios
+5                                               trd.acabados..trd.electrogas.hogar..trd.calentadores..trd.electricos
+6                                                      trd.acabados..trd.electrogas.hogar..trd.calentadores..trd.gas
+7                                             trd.acabados..trd.electrogas.hogar..trd.electrodomesticos..trd.estufas
+8                                  trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.complementos.griferia
+9                                                  trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.ducha
+10                                             trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.fregadero
+11                                             trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.lavatorio
+12                                              trd.acabados..trd.griferia..trd.accesorios.y.repuestos..trd.regadera
+13                                                      trd.acabados..trd.hogar..trd.camping..trd.bombas.para.inflar
+14                                              trd.acabados..trd.hogar..trd.cocina..trd.fregaderos.acero.inoxidable
+15                                                  trd.acabados..trd.hogar..trd.complemento.hogar..trd.varios.hogar
+16                                                     trd.acabados..trd.hogar..trd.electrodomesticos..trd.hornillas
+17                                                     trd.acabados..trd.hogar..trd.electrodomesticos..trd.repuestos
+18                                                             trd.acabados..trd.hogar..trd.limpieza..trd.accesorios
+19                                                               trd.acabados..trd.hogar..trd.limpieza..trd.cepillos
+20                                                 trd.acabados..trd.hogar..trd.limpieza..trd.escobas.y.palo.de.piso
+21                          trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.adhesivos
+22                            trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.brochas
+23                             trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.estopa
+24                        trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.extensiones
+25                  trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.marcos.y.rodillos
+26                       trd.acabados..trd.pinturas.y.recubrimientos..trd.aplicadores.y.accesorios..trd.masking.tape
+27                               trd.acabados..trd.pinturas.y.recubrimientos..trd.impermeabilizantes..trd.exteriores
+28                              trd.acabados..trd.pinturas.y.recubrimientos..trd.pinturas..trd.pintura.acrilica.agua
+29                            trd.acabados..trd.pinturas.y.recubrimientos..trd.pinturas..trd.pintura.alkidica.aceite
+30                                   trd.acabados..trd.pinturas.y.recubrimientos..trd.pinturas..trd.pintura.en.spray
+31                               trd.acabados..trd.pinturas.y.recubrimientos..trd.recubrimientos..trd.revestimientos
+32                                      trd.acabados..trd.pinturas.y.recubrimientos..trd.recubrimientos..trd.stuccos
+33                                         trd.acabados..trd.pinturas.y.recubrimientos..trd.selladores..trd.concreto
+34                                                  trd.acabados..trd.pisos.y.azulejos..trd.aplicadores..trd.fraguas
+35                                                        trd.acabados..trd.pisos.y.azulejos..trd.cenefas..trd.tacos
+36                                                    trd.acabados..trd.pisos.y.azulejos..trd.listelos..trd.listelos
+37                                                       trd.acabados..trd.pisos.y.azulejos..trd.pisos..trd.ceramica
+38                                               trd.estructura..trd.acero.largos..trd.platinas..trd.barras.de.acero
+39                                             trd.estructura..trd.acero.largos..trd.trefilados..trd.alambre.de.puas
+40                                         trd.estructura..trd.acero.largos..trd.trefilados..trd.alambre.galvanizado
+41                                        trd.estructura..trd.acero.largos..trd.trefilados..trd.clavos.para.concreto
+42                                          trd.estructura..trd.acero.largos..trd.trefilados..trd.clavos.para.madera
+43                                       trd.estructura..trd.acero.largos..trd.trefilados..trd.especiales.trefileria
+44                                           trd.estructura..trd.acero.largos..trd.trefilados..trd.malla.galvanizada
+45                                    trd.estructura..trd.acero.largos..trd.varillas..trd.varilla.deformadacorrugada
+46                                         trd.estructura..trd.acero.planos..trd.perfiles..trd.perfiles.galvanizados
+47                                               trd.estructura..trd.acero.planos..trd.perfiles..trd.perfiles.negros
+48                              trd.estructura..trd.acero.planos..trd.techos.acero..trd.lamina.galvanizada.onduladas
+49                            trd.estructura..trd.acero.planos..trd.techos.acero..trd.lamina.galvanizada.rectangular
+50                                trd.estructura..trd.acero.planos..trd.techos.acero..trd.laminas.galvanizadas.lisas
+51                                      trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.caneria.galv.ced.40
+52                                     trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.caneria.negro.ced.40
+53                                        trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.estructural.negro
+54                                   trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.industrial.galvanizado
+55                                         trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.industrial.negro
+56                                                   trd.estructura..trd.acero.planos..trd.tuberias..trd.tubo.pmalla
+57                              trd.estructura..trd.aditivos..impermeab.y.recubrimientos..trd.aditivos..trd.concreto
+58                   trd.estructura..trd.aditivos..impermeab.y.recubrimientos..trd.impermeabilizantes..trd.cubiertas
+59              trd.estructura..trd.aditivos..impermeab.y.recubrimientos..trd.recubrimientos..trd.membranasgeotextil
+60                                          trd.estructura..trd.cementicios..trd.cementicios.derivados..trd.morteros
+61                                               trd.estructura..trd.cementicios..trd.prefabricados..trd.casas.prefa
+62                                             trd.estructura..trd.cementicios..trd.prefabricados..trd.estructurales
+63                                          trd.estructura..trd.cementicios..trd.prefabricados..trd.ladrillo.arcilla
+64                                               trd.estructura..trd.cementicios..trd.prefabricados..trd.mamposteria
+65                                 trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.cpvc..trd.figuras.cpvc
+66                                 trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.cpvc..trd.tuberia.cpvc
+67                            trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.de.cobre..trd.figuras.cobre
+68                            trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.de.cobre..trd.tuberia.cobre
+69                  trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.galvanizada..trd.figuras.galvanizadas
+70                                   trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.ppr..trd.figuras.ppr
+71                                  trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.ppr..trd.tuberias.ppr
+72                                   trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc..trd.figuras.pvc
+73                                   trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc..trd.tuberia.pvc
+74               trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc.sanitaria..trd.figuras.pvc.sanitaria
+75              trd.estructura..trd.tubosistemas..trd.tuberia.y.accesorios.pvc.sanitaria..trd.tuberias.pvc.sanitaria
+76                                                trd.ferreteria..trd.adhesivos..trd.adhesivos..trd.adhesivos.varios
+77                                          trd.ferreteria..trd.adhesivos..trd.pegamentos..trd.pegamento.de.contacto
+78                                             trd.ferreteria..trd.adhesivos..trd.pegamentos..trd.pegamento.para.pvc
+79                                                       trd.ferreteria..trd.adhesivos..trd.silicones..trd.silicones
+80                                                       trd.ferreteria..trd.adhesivos..trd.tape..trd.doble.contacto
+81                                                                trd.ferreteria..trd.adhesivos..trd.tape..trd.ducto
+82                                              trd.ferreteria..trd.adhesivos..trd.tape..trd.plastico.y.transparente
+83                                           trd.ferreteria..trd.almacenamiento..trd.cajas..trd.cajas.de.herramienta
+84                                         trd.ferreteria..trd.almacenamiento..trd.cajas..trd.contenedores.plasticos
+85                                     trd.ferreteria..trd.almacenamiento..trd.escaleras..trd.escaleras.de.extension
+86                                        trd.ferreteria..trd.almacenamiento..trd.escaleras..trd.escaleras.de.tijera
+87                            trd.ferreteria..trd.automotriz..trd.accesorios.y.repuestos..trd.accesorios.y.repuestos
+88                                trd.ferreteria..trd.automotriz..trd.accesorios.y.repuestos..trd.fajas.industriales
+89                                    trd.ferreteria..trd.automotriz..trd.aditivos.y.aceites..trd.aditivos.y.aceites
+90                                      trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.adaptadores
+91                                      trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.extensiones
+92                                            trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.gatas
+93                               trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.herramientas.otros
+94                                   trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.juego.de.dados
+95                                     trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.llaves.allen
+96                               trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.llaves.hexagonales
+97                                trd.ferreteria..trd.automotriz..trd.herramientas.automotriz..trd.manerales.y.ratch
+98                                  trd.ferreteria..trd.automotriz..trd.llantas..neumaticos..trd.llantas..neumaticos
+99                        trd.ferreteria..trd.automotriz..trd.mantenimiento.y.limpieza..trd.mantenimiento.y.limpieza
+100                                                   trd.ferreteria..trd.cerrajeria..trd.candados..trd.anti.cizalla
+101                                                 trd.ferreteria..trd.cerrajeria..trd.candados..trd.demas.candados
+102                                                     trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.cerrojos
+103                                                  trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.decorativas
+104                                                       trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.gaveta
+105                                                     trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.manivela
+106                                                    trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.picaporte
+107                                                         trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.pomo
+108                                                    trd.ferreteria..trd.cerrajeria..trd.cerraduras..trd.seguridad
+109          trd.ferreteria..trd.cerrajeria..trd.complemento.cerrajeria.y.herrajes..trd.varios.cerrajeria.y.herrajes
+110                trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.cincho.plastico..amarras.plasticas
+111                                          trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.enchufes
+112                           trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.extensiones..extensores
+113                                trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.grapas.para.cables
+114                                 trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.guias.para.cables
+115                                            trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.placas
+116                                          trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.switches
+117                trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.tape.y.cintas.electricas.aislantes
+118                                           trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.testers
+119                                           trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.timbres
+120                                   trd.ferreteria..trd.electrico..trd.accesorios.y.repuestos..trd.toma.corrientes
+121                              trd.ferreteria..trd.electrico..trd.alarmas.y.detectores..trd.sensores.de.movimiento
+122                                                    trd.ferreteria..trd.electrico..trd.audio.y.video..trd.antenas
+123                                              trd.ferreteria..trd.electrico..trd.audio.y.video..trd.cable.coaxial
+124                                             trd.ferreteria..trd.electrico..trd.conectoresespigas..trd.terminales
+125                                                   trd.ferreteria..trd.electrico..trd.interruptores..trd.de.pared
+126                                            trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.anillos
+127                           trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.arandelas.y.espaciadores
+128                                            trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.ganchos
+129                             trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.grapas.para.engrapador
+130                                    trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.ribetesremaches
+131                                        trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.tachuelones
+132                                              trd.ferreteria..trd.fijacion..trd.accesorios.de.fijacion..trd.tacos
+133                                                          trd.ferreteria..trd.fijacion..trd.tornillos..trd.estufa
+134                                                    trd.ferreteria..trd.fijacion..trd.tornillos..trd.galvanizados
+135                                                         trd.ferreteria..trd.fijacion..trd.tornillos..trd.maderas
+136                                                        trd.ferreteria..trd.fijacion..trd.tornillos..trd.melamina
+137                                                           trd.ferreteria..trd.fijacion..trd.tornillos..trd.metal
+138                                                    trd.ferreteria..trd.fijacion..trd.tornillos..trd.ojo..abierto
+139                                                           trd.ferreteria..trd.fijacion..trd.tuercas..trd.grado.5
+140                                                trd.ferreteria..trd.fijacion..trd.tuercas..trd.hexagonal..grado.2
+141                          trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.accesorios
+142                  trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.brocas.para.madera
+143                   trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.brocas.para.metal
+144           trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.brocas.para.para.concreto
+145 trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.carbones.para.herramienta.electrica
+146                   trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.discos.de.esmeril
+147                        trd.ferreteria..trd.herramientas.electricas..trd.accesorios.y.repuestos..trd.otros.discos
+148                     trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.atornilladores
+149                             trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.cautin
+150                         trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.cortadoras
+151                       trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.esmeriladora
+152                          trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.lijadoras
+153                      trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.rotomartillos
+154                    trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.sierra.circular
+155                            trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.sierras
+156                           trd.ferreteria..trd.herramientas.electricas..trd.herramientas.electricas..trd.taladros
+157                                      trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.carretillas
+158                                         trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.cinceles
+159               trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.cortadoras.de.azulejo.y.accesorios
+160                                         trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.cucharas
+161                                        trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.espatulas
+162                                         trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.llanetas
+163                                            trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.mazos
+164                                    trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.mazos.de.goma
+165                                          trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.piqueta
+166                                          trd.ferreteria..trd.herramientas.manuales..trd.albanileria..trd.plomada
+167                                trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.berbiqui..barreno
+168                                         trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.cepillos
+169                                     trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.engrapadoras
+170                                        trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.escuadras
+171                                         trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.formones
+172                                        trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.martillos
+173                                     trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.pata.chancho
+174                                           trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.pinzas
+175                                trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.pistolas.silicone
+176                                          trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.prensas
+177                              trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.prensas.hidraulicas
+178                                        trd.ferreteria..trd.herramientas.manuales..trd.carpinteria..trd.serruchos
+179                           trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cepillos.acero
+180                               trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cortadoras
+181                                trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cuchillas
+182                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.cutters
+183                                    trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.limas
+184                             trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.remachadoras
+185                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.segueta
+186                                 trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.sopletes
+187                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.tenazas
+188                                  trd.ferreteria..trd.herramientas.manuales..trd.corte.y.terminacion..trd.tijeras
+189                                           trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.alicates
+190                                   trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.destornilladores
+191                                     trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.llaves.caneria
+192                                   trd.ferreteria..trd.herramientas.manuales..trd.de.ajuste..trd.llaves.francesas
+193                                     trd.ferreteria..trd.herramientas.manuales..trd.electricista..trd.htas.varias
+194                                    trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.azadon.para.jardin
+195                                              trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.machetes
+196                                     trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.palas.para.jardin
+197                                 trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.rastrillo.para.jardin
+198                                   trd.ferreteria..trd.herramientas.manuales..trd.jardin..trd.tijeras.para.jardin
+199                                    trd.ferreteria..trd.herramientas.manuales..trd.juegoscombos..trd.juegoscombos
+200                             trd.ferreteria..trd.herramientas.manuales..trd.medicion.y.trazo..trd.cintas.metricas
+201                                  trd.ferreteria..trd.herramientas.manuales..trd.medicion.y.trazo..trd.marcadores
+202                                     trd.ferreteria..trd.herramientas.manuales..trd.medicion.y.trazo..trd.niveles
+203                       trd.ferreteria..trd.herramientas.manuales..trd.repuestos.herramienta.manual..trd.repuestos
+204                                         trd.ferreteria..trd.herreria.y.herrajes..trd.abrasivos..trd.lija.de.agua
+205                                       trd.ferreteria..trd.herreria.y.herrajes..trd.abrasivos..trd.lija.de.madera
+206                                              trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.bisagras
+207                                             trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.escuadras
+208                                   trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.figuras.para.porton
+209                                               trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.ganchos
+210                                          trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.para.muebles
+211                                              trd.ferreteria..trd.herreria.y.herrajes..trd.herrajes..trd.tensores
+212                                     trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.acero.inoxidable
+213                                              trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.alambre
+214                                              trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.caretas
+215                                                  trd.ferreteria..trd.herreria.y.herrajes..trd.soldadura..trd.mig
+216                        trd.ferreteria..trd.iluminacion.y.accesorios..trd.accesorios.de.iluminacion..trd.plafones
+217                         trd.ferreteria..trd.iluminacion.y.accesorios..trd.accesorios.de.iluminacion..trd.sockets
+218                 trd.ferreteria..trd.iluminacion.y.accesorios..trd.bombillos.y.reflectores..trd.ahorro.de.energia
+219                       trd.ferreteria..trd.iluminacion.y.accesorios..trd.bombillos.y.reflectores..trd.decorativas
+220                trd.ferreteria..trd.iluminacion.y.accesorios..trd.complemento.iluminacion..trd.varios.iluminacion
+221                                         trd.ferreteria..trd.iluminacion.y.accesorios..trd.fusibles..trd.fusibles
+222                                        trd.ferreteria..trd.iluminacion.y.accesorios..trd.linternas..trd.baterias
+223                          trd.ferreteria..trd.iluminacion.y.accesorios..trd.linternas..trd.cargadores.de.baterias
+224                          trd.ferreteria..trd.iluminacion.y.accesorios..trd.luminaria.industrial..trd.reflectores
+225                             trd.ferreteria..trd.iluminacion.y.accesorios..trd.luminaria.residencial..trd.faroles
+226                            trd.ferreteria..trd.iluminacion.y.accesorios..trd.luminaria.residencial..trd.plafones
+227                         trd.ferreteria..trd.industrial..trd.lubricacion.industrial..trd.lubricantes.industriales
+228                          trd.ferreteria..trd.industrial..trd.transmision.de.potencia..trd.mangueras.industriales
+229                 trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.codos.paga.gas
+230            trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.conectores.para.gas
+231                trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.coples.para.gas
+232           trd.ferreteria..trd.instalaciones.de.gas..trd.conexiones.y.accesorios.de.gas..trd.reguladores.para.gas
+233                                                       trd.ferreteria..trd.jardin..trd.accesorios..trd.accesorios
+234                                                          trd.ferreteria..trd.jardin..trd.accesorios..trd.guantes
+235                       trd.ferreteria..trd.jardin..trd.bombas.de.fumigacion..trd.bomba.de.fumigacion.convencional
+236                                                       trd.ferreteria..trd.jardin..trd.irrigacion..trd.aspersores
+237                                                        trd.ferreteria..trd.jardin..trd.irrigacion..trd.mangueras
+238                                            trd.ferreteria..trd.jardin..trd.irrigacion..trd.pistolas.y.accesorios
+239                                       trd.ferreteria..trd.maquinaria.y.equipos..trd.aspiradoras..trd.aspiradoras
+240                           trd.ferreteria..trd.maquinaria.y.equipos..trd.compresores.y.accesorios..trd.accesorios
+241                          trd.ferreteria..trd.maquinaria.y.equipos..trd.compresores.y.accesorios..trd.compresores
+242                                          trd.ferreteria..trd.maquinaria.y.equipos..trd.generadores..trd.gasolina
+243                                 trd.ferreteria..trd.maquinaria.y.equipos..trd.hidrolavadoras..trd.hidrolavadoras
+244                           trd.ferreteria..trd.maquinaria.y.equipos..trd.maquina.de.soldar..trd.maquina.de.soldar
+245                                         trd.ferreteria..trd.maquinaria.y.equipos..trd.podadoras..trd.cortabordes
+246                                          trd.ferreteria..trd.maquinaria.y.equipos..trd.podadoras..trd.de.tractor
+247                                          trd.ferreteria..trd.maquinaria.y.equipos..trd.podadoras..trd.motosierra
+248                                  trd.ferreteria..trd.plomeria..trd.accesorios.de.plomeria..trd.accesorios.varios
+249                                                           trd.ferreteria..trd.plomeria..trd.desague..trd.desague
+250                                        trd.ferreteria..trd.plomeria..trd.motores.y.bombas..trd.proposito.general
+251                                                             trd.ferreteria..trd.plomeria..trd.niples..trd.niples
+252                                                             trd.ferreteria..trd.plomeria..trd.teflon..trd.teflon
+253                                                        trd.ferreteria..trd.plomeria..trd.valvulas..trd.compuerta
+254                                                          trd.ferreteria..trd.plomeria..trd.valvulas..trd.entrada
+255                                                              trd.ferreteria..trd.plomeria..trd.valvulas..trd.pvc
+256                                                       trd.ferreteria..trd.plomeria..trd.valvulas..trd.reguladora
+257                                           trd.ferreteria..trd.plomeria..trd.varios.plomeria..trd.varios.plomeria
+258                                            trd.ferreteria..trd.recreacion..trd.implementos.deportivos..trd.pesca
+259                                         trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.anteojos
+260                                            trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.arnes
+261                                    trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.botas.de.hule
+262                                            trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.capas
+263                                           trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cascos
+264                                         trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.chalecos
+265                                 trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cinta.precaucion
+266                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cinturon.de.herramienta
+267                                       trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.cinturones
+268                                            trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.conos
+269                                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.guantes
+270                               trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.malla.de.seguridad
+271                                trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.mascaras..caretas
+272                                         trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.orejeras
+273                                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.rotulos
+274                                          trd.ferreteria..trd.seguridad.y.proteccion..trd.proteccion..trd.zapatos
+275                        trd.ferreteria..trd.seguridad.y.proteccion..trd.varios.seguridad.y.proteccion..trd.varios
+276                                                         trd.ferreteria..trd.utilitarios..trd.cadenas..trd.cadena
+277                                              trd.ferreteria..trd.utilitarios..trd.cadenas..trd.cadenas.por.metro
+278                                                      trd.ferreteria..trd.utilitarios..trd.cadenas..trd.grilletes
+279                                                        trd.ferreteria..trd.utilitarios..trd.cadenas..trd.uniones
+280                                                     trd.ferreteria..trd.utilitarios..trd.cedazos..trd.mosquitero
+281                                                   trd.ferreteria..trd.utilitarios..trd.cobertores..trd.manteados
+282                                            trd.ferreteria..trd.utilitarios..trd.sogas..trd.sogas..mecates.varias
+283                                          trd.ferreteria..trd.utilitarios..trd.sogas..trd.sogas.por.metro.mecates
+284                                   trd.obra.gris..trd.construccion.liviana..trd.tablas.livianas..trd.fibrocemento
+285                                         trd.obra.gris..trd.construccion.liviana..trd.tablas.livianas..trd.gypsum
+286                                                            trd.obra.gris..trd.electrico..trd.cables..trd.aislado
+287                                                            trd.obra.gris..trd.electrico..trd.cables..trd.coaxial
+288                                                           trd.obra.gris..trd.electrico..trd.cables..trd.cubierto
+289                                                     trd.obra.gris..trd.electrico..trd.cables..trd.portaelectrodo
+290                                                   trd.obra.gris..trd.electrico..trd.canalizacion..trd.accesorios
+291                                                    trd.obra.gris..trd.electrico..trd.canalizacion..trd.canaletas
+292                                                   trd.obra.gris..trd.electrico..trd.canalizacion..trd.conectores
+293                                                        trd.obra.gris..trd.electrico..trd.canalizacion..trd.gazas
+294                                                        trd.obra.gris..trd.electrico..trd.canalizacion..trd.tubos
+295                                                     trd.obra.gris..trd.electrico..trd.distribucion..trd.breakers
+296                                     trd.obra.gris..trd.electrico..trd.distribucion..trd.cajas.electricas.de.paso
+297                            trd.obra.gris..trd.electrico..trd.distribucion..trd.ctro.carga.monofasicos.empotrados
+298                                                          trd.obra.gris..trd.fosas.y.tanques..trd.fosas..trd.agua
+299                                        trd.obra.gris..trd.puertas.ventanas.y.molduras..trd.puertas..trd.exterior
+300                                        trd.obra.gris..trd.puertas.ventanas.y.molduras..trd.puertas..trd.interior
+301                                       trd.obra.gris..trd.puertas.ventanas.y.molduras..trd.ventanas..trd.aluminio
+302                                               trd.obra.gris..trd.techos.no.metalicos..trd.teja..trd.teja.arcilla
+       n    p
+1     15 0.05
+2     49 0.15
+3     33 0.10
+4     21 0.07
+5     11 0.03
+6     50 0.16
+7      9 0.03
+8    364 1.14
+9     35 0.11
+10   156 0.49
+11    17 0.05
+12   156 0.49
+13    48 0.15
+14    33 0.10
+15    43 0.13
+16    19 0.06
+17    33 0.10
+18    85 0.27
+19    32 0.10
+20    61 0.19
+21    24 0.07
+22   194 0.60
+23    10 0.03
+24    25 0.08
+25   132 0.41
+26    52 0.16
+27    72 0.22
+28    95 0.30
+29    77 0.24
+30   153 0.48
+31   281 0.88
+32    13 0.04
+33    54 0.17
+34    52 0.16
+35    48 0.15
+36    35 0.11
+37    72 0.22
+38    27 0.08
+39    28 0.09
+40    59 0.18
+41   130 0.41
+42   110 0.34
+43    11 0.03
+44   106 0.33
+45    75 0.23
+46    18 0.06
+47    24 0.07
+48   102 0.32
+49    26 0.08
+50    16 0.05
+51    11 0.03
+52    10 0.03
+53    50 0.16
+54    28 0.09
+55    33 0.10
+56    12 0.04
+57    40 0.12
+58    12 0.04
+59   164 0.51
+60    26 0.08
+61    14 0.04
+62   129 0.40
+63    21 0.07
+64    14 0.04
+65   396 1.23
+66    84 0.26
+67   231 0.72
+68    41 0.13
+69   157 0.49
+70   378 1.18
+71    24 0.07
+72   291 0.91
+73   205 0.64
+74    98 0.31
+75    36 0.11
+76    98 0.31
+77    53 0.17
+78    24 0.07
+79    34 0.11
+80    30 0.09
+81    31 0.10
+82    31 0.10
+83   252 0.79
+84    98 0.31
+85    73 0.23
+86    29 0.09
+87    36 0.11
+88    31 0.10
+89    34 0.11
+90    45 0.14
+91   164 0.51
+92    85 0.27
+93   708 2.21
+94  2451 7.64
+95   335 1.04
+96   768 2.39
+97    13 0.04
+98    10 0.03
+99    65 0.20
+100   97 0.30
+101  224 0.70
+102   82 0.26
+103   14 0.04
+104   22 0.07
+105  155 0.48
+106   37 0.12
+107   25 0.08
+108  235 0.73
+109   22 0.07
+110  158 0.49
+111  103 0.32
+112  342 1.07
+113   65 0.20
+114   29 0.09
+115  245 0.76
+116  137 0.43
+117  120 0.37
+118   63 0.20
+119   13 0.04
+120   28 0.09
+121   10 0.03
+122   24 0.07
+123   12 0.04
+124   17 0.05
+125   57 0.18
+126   46 0.14
+127   45 0.14
+128  244 0.76
+129   51 0.16
+130   43 0.13
+131   15 0.05
+132   47 0.15
+133   33 0.10
+134  320 1.00
+135  204 0.64
+136   48 0.15
+137   12 0.04
+138   63 0.20
+139   15 0.05
+140   21 0.07
+141  308 0.96
+142  253 0.79
+143 1004 3.13
+144  294 0.92
+145   60 0.19
+146  583 1.82
+147   57 0.18
+148   17 0.05
+149   35 0.11
+150   51 0.16
+151   74 0.23
+152   24 0.07
+153   94 0.29
+154   18 0.06
+155   52 0.16
+156   43 0.13
+157  287 0.89
+158  324 1.01
+159   95 0.30
+160  107 0.33
+161  171 0.53
+162  124 0.39
+163  230 0.72
+164   26 0.08
+165  124 0.39
+166   43 0.13
+167    9 0.03
+168   15 0.05
+169   31 0.10
+170   65 0.20
+171   59 0.18
+172  252 0.79
+173   38 0.12
+174   34 0.11
+175   47 0.15
+176  137 0.43
+177   17 0.05
+178   88 0.27
+179  128 0.40
+180  115 0.36
+181  103 0.32
+182   71 0.22
+183  226 0.70
+184  159 0.50
+185  119 0.37
+186   23 0.07
+187  154 0.48
+188  145 0.45
+189   83 0.26
+190  725 2.26
+191  510 1.59
+192  240 0.75
+193  290 0.90
+194   51 0.16
+195  132 0.41
+196  317 0.99
+197  121 0.38
+198   30 0.09
+199  898 2.80
+200  231 0.72
+201   71 0.22
+202  163 0.51
+203   45 0.14
+204  167 0.52
+205  168 0.52
+206  221 0.69
+207  116 0.36
+208   42 0.13
+209   24 0.07
+210   68 0.21
+211   73 0.23
+212   20 0.06
+213   26 0.08
+214   51 0.16
+215   10 0.03
+216   17 0.05
+217   33 0.10
+218  105 0.33
+219   60 0.19
+220   33 0.10
+221   36 0.11
+222  123 0.38
+223   14 0.04
+224   90 0.28
+225   12 0.04
+226   10 0.03
+227   47 0.15
+228   21 0.07
+229  127 0.40
+230  156 0.49
+231   41 0.13
+232   16 0.05
+233  190 0.59
+234   59 0.18
+235   38 0.12
+236   75 0.23
+237  249 0.78
+238   71 0.22
+239   24 0.07
+240   53 0.17
+241   46 0.14
+242   10 0.03
+243   48 0.15
+244   56 0.17
+245   41 0.13
+246   12 0.04
+247   16 0.05
+248  438 1.37
+249   70 0.22
+250  102 0.32
+251  136 0.42
+252   31 0.10
+253   24 0.07
+254   33 0.10
+255   29 0.09
+256   97 0.30
+257  158 0.49
+258   18 0.06
+259  114 0.36
+260   58 0.18
+261  229 0.71
+262   60 0.19
+263   61 0.19
+264  116 0.36
+265   91 0.28
+266   22 0.07
+267   46 0.14
+268   23 0.07
+269  189 0.59
+270   18 0.06
+271  109 0.34
+272   38 0.12
+273   56 0.17
+274   12 0.04
+275  135 0.42
+276   51 0.16
+277   77 0.24
+278   27 0.08
+279   10 0.03
+280   22 0.07
+281   67 0.21
+282  143 0.45
+283   15 0.05
+284   38 0.12
+285   10 0.03
+286   88 0.27
+287   29 0.09
+288  183 0.57
+289   22 0.07
+290   24 0.07
+291   25 0.08
+292   33 0.10
+293  167 0.52
+294   18 0.06
+295   48 0.15
+296   17 0.05
+297   28 0.09
+298   55 0.17
+299   12 0.04
+300   11 0.03
+301   24 0.07
+302   19 0.06
+

@@ -13,29 +13,35 @@ prod <- read.xlsx("data_raw/Productos_Candidatos_30_corregidos.xlsx", "Todos") %
 new <-  h2o_word2vec.predict(
   prod$product, w2v, model$model, 
   params = params, clean = TRUE, top = 1)
+freqs(new$category)
 hist(new$probability)
 summary(new$probability)
-head(new, 10)
+head(new)
 
 # Check random products
 new %>% ungroup() %>% sample_n(20) %>% arrange(desc(probability))
 
-# Export into a CSV
-write.csv(new, "data_preds/test_v5.2.csv")
-
 # Check specific inputs
-h2o_word2vec.predict("mortero seco", w2v, model$model, params = params, clean = TRUE, top = 5)
-predict(w2v, "tuerca", type = "nearest", top_n = 8)
-
+product_name <- "mortero"
+h2o_word2vec.predict(product_name, w2v, model$model, params = params, clean = TRUE, top = 5)
+# Search for products/categories containing product_name
 df %>% clean_label("category") %>% 
-  filter(grepl("mortero", product)) %>% 
-  select(product, category) 
+  filter(grepl(product_name, paste(category, product))) %>% 
+  select(source, category, product)
+# Check close words or synonyms
+predict(w2v, "mortero", type = "nearest", top_n = 8)
 
-# Visualize results
-ggplot(new, aes(x = reorder(category, probability), y = probability)) +
-  geom_boxplot() + theme_lares() +
-  coord_flip() +
-  labs(x = NULL)
+# Top N Predictors
+gs <-  h2o_word2vec.predict(
+  prod$product, w2v, model$model, 
+  params = params, clean = TRUE, top = 2) %>%
+  group_by(id) %>% mutate(tied = length(unique(probability)) == 1) %>%
+  left_join(select(prod, row_id:internal), by = c("id" = "row_id"))
+# How many does the model is uncertain between the top labels?
+gs %>% slice(1) %>% freqs(tied)
+
+# Upload to GSheets
+writeGS(gs, "Elemétrica: Catálogo Disensa", "TopProducts2")
 
 ############
 logs <- read.csv("resultslog.csv")
@@ -64,11 +70,10 @@ hist(temp$probability)
 h2o::h2o.findSynonyms(w2v.model$model, as.h2o("mortero"), 10)
 
 # ADD INTERNAL CODES
-gs <- readGS("Elemétrica: Timetable", "TopProducts")
+gs <- readGS("Elemétrica: Catálogo Disensa", "TopProducts", email = "laresbernardo@gmail.com")
 labeled_gs <- gs %>% left_join(
   cats %>% mutate(chain4 = cleanText(cats$chain4, spaces = ".")) %>% 
     clean_label("chain4") %>%
     select(chain4, code) %>% distinct(), 
   by = c("Predicción" = "chain4"))
-writeGS(select(labeled_gs, code), "Elemétrica: Timetable", "Temp")
-
+writeGS(select(labeled_gs, code), "Elemétrica: Catálogo Disensa", "Temp")

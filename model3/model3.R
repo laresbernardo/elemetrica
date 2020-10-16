@@ -5,6 +5,7 @@ source("scripts/params3.R")
 
 # Read the data
 cats <- read_data(type = params$type)
+freqs(cats, source)
 
 # Prepare dataset
 df <- prepare_data(cats, 
@@ -14,7 +15,7 @@ df <- prepare_data(cats,
                    add_units = params$add_units)
 
 # Print summary and most frequents
-params[["data"]] <- summary_data(df, cats)
+params[["data"]] <- summary_data(df, cats, level = params$level)
 print(params$data)
 
 # Clean labels text
@@ -30,7 +31,7 @@ w2v <- word2vec(txt,
                 window = params$w2v.window, # for skip-gram usually around 10, for cbow around 5
                 dim = params$w2v.vecs, # usually more is better, but not always
                 stopwords = STOP_WORDS,
-                min_count = params$min_per_cat,
+                min_count = 3,
                 iter = params$w2v.epochs)
 
 # Prepare training & validation data (keep only labels made of known words)

@@ -50,7 +50,7 @@ read_data <- function(type = 3) {
       mutate(code = paste0(level1lab, level2lab, level3lab, level4lab)) %>%
       filter(!is.na(level1)) %>%
       mutate_all(list(as.character)) %>%
-      mutate(source = 1)
+      mutate(source = "catDisMEX")
     
     df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
       cleanNames() %>%
@@ -65,7 +65,7 @@ read_data <- function(type = 3) {
       filter(!is.na(level1)) %>%
       select(any_of(colnames(df1))) %>%
       mutate_all(list(as.character)) %>%
-      mutate(source = 2)
+      mutate(source = "detProdEAN")
     
   }
   
@@ -81,7 +81,7 @@ read_data <- function(type = 3) {
       select(product, code, 
              starts_with("level"),
              starts_with("chain")) %>%
-      mutate(source = 3)
+      mutate(source = "catDisLimp")
     
     df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
       cleanNames() %>%
@@ -96,9 +96,27 @@ read_data <- function(type = 3) {
       filter(!is.na(level1)) %>%
       select(any_of(colnames(df1))) %>%
       mutate_all(list(as.character)) %>%
-      mutate(source = 2)
+      mutate(source = "detProdEAN")
     
-    df <- bind_rows(df1, df2) %>%
+    temp <- lares::importxlsx("data_raw/catalogosYsinonimos.xlsx")
+    for (i in 1:length(temp)) temp[[i]]$source <- names(temp)[i]
+    temp <- lapply(temp, function(x) mutate_all(x, as.character)) %>% bind_rows
+    df3 <- temp %>% cleanNames() %>% select(-source) %>%
+      rename(product = description,
+             code = codcat,
+             level1lab = l1,
+             level2lab = l2,
+             level3lab = l3,
+             level4lab = l4,
+             level1 = nl1,
+             level2 = nl2,
+             level3 = nl3,
+             level4 = nl4) %>%
+      select(any_of(colnames(df1))) %>%
+      mutate_all(list(as.character)) %>%
+      mutate(source = paste0("cYs_", temp$source))
+    
+    df <- bind_rows(df1, df2, df3) %>%
       mutate(
         chain1 = level1,
         chain2 = paste(level1, level2, sep = " > "),
@@ -116,7 +134,7 @@ read_data <- function(type = 3) {
 }
 
 # Prepare XLSX data
-prepare_data <- function(cats, level = 1, sample_p = 1, minimum = 10, type = 1, add_units = TRUE) {
+prepare_data <- function(cats, level = 4, sample_p = 1, minimum = 10, type = 1, add_units = TRUE) {
   set.seed(0)
   cats[,paste0("chain", level)] %>%
     cbind(cleanText(cats$product)) %>%
@@ -147,12 +165,13 @@ add_units <- function(df, add = TRUE) {
 }
 
 # Print summary
-summary_data <- function(df, cats) {
+summary_data <- function(df, cats, level = 4) {
   list(products = nrow(df),
-       categories = length(unique(cats$code)),
+       categories = nrow(unique(cats[,paste0("level",level)])),
        categories_used = length(unique(df$category)),
        data_used = round(nrow(df)/nrow(cats), 4))
 }
+
 
 # Clean product names before word2vec
 clean_product <- function(x, 
@@ -264,7 +283,6 @@ h2o_word2vec.predict <- function(x, w2v, model, clean = FALSE, top = 1, params =
   
   result$label <- x
   if (clean) result <- clean_predict(result, top = top)
-  result$id <- 1:nrow(result)
   return(result)
 }
 
@@ -276,8 +294,9 @@ clean_predict <- function(x, top = 5) {
     arrange(id, desc(probability)) %>%
     group_by(id) %>%
     slice(1:top) %>%
+    mutate(rank = 1:top) %>%
     clean_label(label = "category") %>%
-    select(2,1,3,4) %>%
+    select(2,1,3,4, rank) %>%
     as_tibble
 }
 
