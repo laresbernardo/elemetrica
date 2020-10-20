@@ -29,7 +29,7 @@ df %>% clean_label("category") %>%
   filter(grepl(product_name, paste(category, product))) %>% 
   select(source, category, product)
 # Check close words or synonyms
-predict(w2v, "mortero", type = "nearest", top_n = 8)
+predict(w2v, product_name, type = "nearest", top_n = 8)
 
 # Top N Predictors
 gs <-  h2o_word2vec.predict(
@@ -39,6 +39,8 @@ gs <-  h2o_word2vec.predict(
   left_join(select(prod, row_id:internal), by = c("id" = "row_id"))
 # How many does the model is uncertain between the top labels?
 gs %>% slice(1) %>% freqs(tied)
+# Distributions
+gs %>% ungroup() %>% mutate(range = quants(100*probability, 5, "labels")) %>% freqs(range, abc=T)
 
 # Upload to GSheets
 writeGS(gs, "Elemétrica: Catálogo Disensa", "TopProducts2")
@@ -77,3 +79,13 @@ labeled_gs <- gs %>% left_join(
     select(chain4, code) %>% distinct(), 
   by = c("Predicción" = "chain4"))
 writeGS(select(labeled_gs, code), "Elemétrica: Catálogo Disensa", "Temp")
+
+# JOIN RESULTS TO COMPARE
+gs1 <- readGS("Elemétrica: Catálogo Disensa", "TopProducts", email = "laresbernardo@gmail.com")
+gs2 <- readGS("Elemétrica: Catálogo Disensa", "TopProducts2", email = "laresbernardo@gmail.com")
+gs1 %>% left_join(gs2 %>% filter(rank == 1), by = c(`Codigo Elemetrica` = "internal")) %>%
+  filter(!is.na(category)) %>%
+  mutate(unchanged = `Predicción` == category) %>%
+  filter(!unchanged) %>%
+  sample_n(20) %>%
+  select(label, `Predicción`, `Certeza`, category, probability)

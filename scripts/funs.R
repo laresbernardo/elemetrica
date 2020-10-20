@@ -11,7 +11,7 @@ library(word2vec)
 h2o.init()
 
 # Define stopwords
-STOP_WORDS = c("de")
+STOP_WORDS = c("de","para","con")
 
 # List of all possible codes
 read_codes <- function() {
@@ -70,7 +70,8 @@ read_data <- function(type = 3) {
   }
   
   if (type == 3) {
-    df1 <- read.xlsx("data_raw/catalogoDisensaLimpia.xlsx") %>%
+    dfs <- list()
+    dfs[[1]] <- read.xlsx("data_raw/catalogoDisensaLimpia.xlsx") %>%
       cleanNames() %>%
       rename(product = texto_breve_de_material,
              code = cod,
@@ -83,7 +84,7 @@ read_data <- function(type = 3) {
              starts_with("chain")) %>%
       mutate(source = "catDisLimp")
     
-    df2 <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
+    dfs[[2]] <- read.xlsx("data_raw/Detalle de productos con EAN.xlsx", 2) %>%
       cleanNames() %>%
       select(descripcion_del_producto, categoria_disensa) %>%
       rename(product = descripcion_del_producto,
@@ -101,7 +102,7 @@ read_data <- function(type = 3) {
     temp <- lares::importxlsx("data_raw/catalogosYsinonimos.xlsx")
     for (i in 1:length(temp)) temp[[i]]$source <- names(temp)[i]
     temp <- lapply(temp, function(x) mutate_all(x, as.character)) %>% bind_rows
-    df3 <- temp %>% cleanNames() %>% select(-source) %>%
+    dfs[[3]] <- temp %>% cleanNames() %>% select(-source) %>%
       rename(product = description,
              code = codcat,
              level1lab = l1,
@@ -116,7 +117,7 @@ read_data <- function(type = 3) {
       mutate_all(list(as.character)) %>%
       mutate(source = paste0("cYs_", temp$source))
     
-    df <- bind_rows(df1, df2, df3) %>%
+    df <- bind_rows(dfs) %>%
       mutate(
         chain1 = level1,
         chain2 = paste(level1, level2, sep = " > "),
@@ -197,7 +198,8 @@ clean_product <- function(x,
   # Remove numbers
   if (dropnum) x <- gsub("[0-9]", "", x)
   # Remove stop words
-  if (stop_words[1] != "") x <- sapply(stop_words, function(y) stringr::str_remove(x, y))
+  if (stop_words[1] != "")
+    for (word in stop_words) x <- stringr::str_remove(x, word)
   # White spaces and UTF stuff
   x <- cleanText(x)
   return(x)

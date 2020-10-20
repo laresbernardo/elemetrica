@@ -25,6 +25,9 @@ txt <- clean_product(df$product,
                      dropnumwords = params$dropnumwords,
                      splitcharnums = params$splitcharnums)
 
+# # Most frequent words
+# words <- lares::textTokenizer(txt, remove_numbers = params$dropnumwords); words
+
 # Create word2vector model
 w2v <- word2vec(txt, 
                 type = "cbow", # skip-gram (slower, better for infrequent words) vs cbow (fast)
@@ -35,11 +38,9 @@ w2v <- word2vec(txt,
                 iter = params$w2v.epochs)
 
 # Prepare training & validation data (keep only labels made of known words)
-data <- df %>% 
-  bind_cols(
-  suppressWarnings(doc2vec(w2v, txt)) %>% as_tibble() %>%
-  magrittr::set_names(paste0("C", 1:w2v$control$dim))) %>%
-  filter(!is.na(.data$C1))
+vctrs <- suppressWarnings(doc2vec(w2v, txt)) %>% as_tibble() %>%
+  magrittr::set_names(paste0("C", 1:w2v$control$dim))
+data <- df %>% bind_cols(vctrs) %>% filter(!is.na(.data$C1))
 print(head(data))
 
 # Train model
@@ -49,6 +50,7 @@ modelx <- h2o_automl(
   ignore = c("product", "chain", "source"),
   max_models = params$models,
   split = params$train_p,
+  nfolds = params$nfolds,
   exclude_algos = params$exclude_algos,
   include_algos = params$include_algos,
   thresh = 1000, 
@@ -80,7 +82,7 @@ save_log(params, save = params$save, print = TRUE)
 ############ EXPORT MODELS
 if (params$export) {
   export_results(
-    model, thresh = 1000, subdir = "MOJOs",
+    model, thresh = 1000, subdir = "H2O",
     which = c("txt", "mojo"))
   write.word2vec(w2v, "W2V/w2v.bin", type = "bin", encoding = "UTF-8")
   write.word2vec(w2v, "W2V/w2v.txt", type = "txt", encoding = "UTF-8")
