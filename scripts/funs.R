@@ -20,7 +20,7 @@ read_codes <- function() {
 }
 
 # Import XLSX file
-read_data <- function(type = 3) {
+read_data <- function(type = 3, refresh = FALSE) {
   
   if (type == 1) {
     df <- read.xlsx("data_raw/Catalogo Disensa MEX-ZMMRET02_110920.XLSX") %>%
@@ -117,15 +117,56 @@ read_data <- function(type = 3) {
       mutate_all(list(as.character)) %>%
       mutate(source = paste0("cYs_", temp$source))
     
-    df <- bind_rows(dfs) %>%
-      mutate(
-        chain1 = level1,
-        chain2 = paste(level1, level2, sep = " > "),
-        chain3 = paste(level1, level2, level3, sep = " > "),
-        chain4 = paste(level1, level2, level3, level4, sep = " > "))
+    df <- bind_rows(dfs)
+  }
+  
+  if (type == 4) {
+    if (refresh) {
+      email <- "laresbernardo@gmail.com"
+      # Catalogues
+      mx <- readGS("Catalogos - Todos los Paises", "Catalogo Mexico", email = email)
+      mx_aksi <- readGS("Catalogos - Todos los Paises", "Catalogo AKSI MX", email = email)
+      mx_surtek <- readGS("Catalogos - Todos los Paises", "Catalogo surtek MX", email = email)
+      mx_truper <- readGS("Catalogos - Todos los Paises", "Catalogo truper MX", email = email)
+      ec <- readGS("Catalogos - Todos los Paises", "Catalogo Ecuador", email = email)
+      # Manual labels
+      mx_manual <- readGS("Catalogos - Todos los Paises", "Manuales MX", email = email)
+      ec_manual <- readGS("Catalogos - Todos los Paises", "Manuales EC", email = email)
+      # Enlist everything
+      output <- list(
+        mx = select(mx, `Texto breve de material`, `Codigo Categorias`),
+        mx_aksi = select(mx_aksi, Description, Cod_Cat),
+        mx_surtek = select(mx_surtek, Description, Cod_Cat),
+        mx_truper = select(mx_truper, Description, Cod_Cat),
+        ec = select(ec, Description, Cod_Cat),
+        mx_manual = select(mx_manual, `Descripción del Producto`, `Categoria Final`),
+        ec_manual = select(ec_manual, `Descripción del Producto`, `Categoria Final`)
+      )
+      for (i in 1:length(output)) {
+        colnames(output[[i]]) <- c("product", "code")
+        output[[i]]$source <- names(output)[i]
+      }
+      df <- bind_rows(output) %>% group_by(code, product) %>% 
+        mutate(rep = row_number()) %>% filter(rep == 1) %>% select(-rep) %>%
+        mutate(level1lab = substr(code, 1,2),
+               level2lab = substr(code, 3,5),
+               level3lab = substr(code, 6,8),
+               level4lab = substr(code, 9,11)) %>%
+        left_join(read_codes(), "code") %>%
+        filter(!is.na(level1))
+      # Export results
+      data.table::fwrite(ret, "data_raw/allcatalogues_v1.csv")  
+    } else {
+      df <- data.table::fread("data_raw/allcatalogues_v1.csv") 
+    }
   }
   
   df <- df %>%
+    mutate(
+      chain1 = level1,
+      chain2 = paste(level1, level2, sep = " > "),
+      chain3 = paste(level1, level2, level3, sep = " > "),
+      chain4 = paste(level1, level2, level3, level4, sep = " > ")) %>%
     arrange(code) %>%
     distinct(.keep_all = TRUE) %>%
     as_tibble() 
@@ -149,6 +190,7 @@ prepare_data <- function(cats, level = 4, sample_p = 1, minimum = 10, type = 1, 
     filter(category != "less_than_min") %>%
     mutate(category = as.factor(category)) %>%
     add_units(add = add_units) %>%
+    filter(category != "..", product != "") %>%
     as_tibble()
 }
 
@@ -313,7 +355,7 @@ clean_label <- function(x, label = "label") {
   return(x)
 }
 
-save_log <- function(params, save = TRUE, print = TRUE) {
+save_log <- function(params, save = TRUE, print = TRUE, dir = "") {
   
   df <- suppressWarnings(bind_cols(params))
   log_tab <- data.frame(time = as.character(Sys.time())) %>% cbind(df)
@@ -324,7 +366,7 @@ save_log <- function(params, save = TRUE, print = TRUE) {
   } 
   
   if (save) {
-    file <- "resultslog.csv"
+    file <- paste0(dir, "/resultslog.csv")
     if (file.exists(file)) {
       old <- read.csv(file) %>% mutate_all(list(as.character))
       if (log_tab$model_name %in% old$model_name)

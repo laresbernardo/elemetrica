@@ -1,0 +1,2 @@
+"time","type","refresh","level","min_per_cat","dropnumwords","minchar","splitcharnums","add_units","w2v.epochs","w2v.window","w2v.vecs","models","sample_p","train_p","nfolds","include_algos","save","export","products","categories","categories_used","data_used","model_name","AUC","ACC","train_time","acc_cv","err_cv","mean_prob"
+"2020-11-13 10:05:42",4,FALSE,4,10,FALSE,1,TRUE,FALSE,16,7,100,1,1,1,10,"DRF",TRUE,FALSE,41393,492,363,0.9714,"DRF_1_AutoML_20201113_095814",0.99734,0.9651,6.77,"0.69162154","0.4425137",0.869120444588346
