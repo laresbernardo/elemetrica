@@ -33,4 +33,4 @@ jobs:
         shell: Rscript {0}
         
       - name: Run script
-        run: Rscript -e 'source("model2/model2.R")'
+        run: Rscript -e 'source("model4/model4.R")'
