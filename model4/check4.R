@@ -3,11 +3,13 @@ source("scripts/funs.R")
 # Define model parameters
 source("model4/params4.R")
 
-prod <- read.xlsx("data_raw/Productos_Candidatos_30_corregidos.xlsx", "Todos") %>%
-  cleanNames() %>%
-  mutate(product = descripcion_del_producto,
-         row_id = row_number(),
-         internal = codigo_producto_solo_elemetrica)
+ec_nolabs <- readGS(
+  "Catalogos - Todos los Paises", "Sin Categorizar EC", 
+  email = "laresbernardo@gmail.com",
+  range = "C4:D19067")
+prod <- ec_nolabs %>% 
+  magrittr::set_colnames(c("product", "internal")) %>%
+  mutate(row_id = row_number())
 
 # Run predictions
 new <-  h2o_word2vec.predict(
@@ -22,7 +24,8 @@ head(new)
 new %>% ungroup() %>% sample_n(20) %>% arrange(desc(probability))
 
 # Check specific inputs
-product_name <- "mortero"
+sample_n(cats, 5) %>% select(product, chain4)
+product_name <- "TEFLON 19MM"
 h2o_word2vec.predict(product_name, w2v, model$model, params = params, clean = TRUE, top = 5)
 # Search for products/categories containing product_name
 df %>% clean_label("category") %>% 
@@ -37,13 +40,14 @@ gs <-  h2o_word2vec.predict(
   params = params, clean = TRUE, top = 2) %>%
   group_by(id) %>% mutate(tied = length(unique(probability)) == 1) %>%
   left_join(select(prod, row_id:internal), by = c("id" = "row_id"))
+head(gs); dim(gs)
 # How many does the model is uncertain between the top labels?
 gs %>% slice(1) %>% freqs(tied)
 # Distributions
 gs %>% ungroup() %>% mutate(range = quants(100*probability, 5, "labels")) %>% freqs(range, abc=T)
 
 # Upload to GSheets
-writeGS(gs, "Elemétrica: Catálogo Disensa", "TopProducts2")
+writeGS(gs, "Catalogos - Todos los Paises", "Modelo EC")
 
 ############ Check logs
 logs <- read.csv("resultslog.csv")
@@ -89,3 +93,7 @@ gs1 %>% left_join(gs2 %>% filter(rank == 1), by = c(`Codigo Elemetrica` = "inter
   filter(!unchanged) %>%
   sample_n(20) %>%
   select(label, `Predicción`, `Certeza`, category, probability)
+
+mplot_conf(tag = model$scores_test$tag,
+           score = model$scores_test$score,
+           abc = FALSE, diagonal = TRUE, top = 20)

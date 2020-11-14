@@ -14,9 +14,24 @@ h2o.init()
 STOP_WORDS = c("de","para","con")
 
 # List of all possible codes
-read_codes <- function() {
-  file <- "data_raw/categorizacion_regional_DISENSA.xlsx"
-  read.xlsx(file, "base")
+read_codes <- function(type = 2, refresh = FALSE) {
+  if (type == 1) {
+    file <- "data_raw/categorizacion_regional_DISENSA.xlsx"
+    ret <- read.xlsx(file, "base") %>% as_tibble
+  }
+  if (type == 2) {
+    if (refresh) {
+      ret <- readGS(
+        "Catalogos - Todos los Paises", "CATEGORIAS",
+        email = "laresbernardo@gmail.com") %>%
+        select(1,2,4,6,8) %>%
+        magrittr::set_colnames(c("code",paste0("level",1:4)))
+      write.csv(ret, "full_catalogue.csv", row.names = FALSE) 
+    } else {
+      ret <- read("full_catalogue.csv") 
+    }
+  }
+  return(ret)
 }
 
 # Import XLSX file
@@ -152,12 +167,15 @@ read_data <- function(type = 3, refresh = FALSE) {
                level2lab = substr(code, 3,5),
                level3lab = substr(code, 6,8),
                level4lab = substr(code, 9,11)) %>%
+        mutate(country = substr(source, 1, 2)) %>%
         left_join(read_codes(), "code") %>%
         filter(!is.na(level1))
       # Export results
-      data.table::fwrite(ret, "data_raw/allcatalogues_v1.csv")  
+      data.table::fwrite(df, "data_raw/allcatalogues_v1.csv")  
+      message("Saved imported data...")
     } else {
-      df <- data.table::fread("data_raw/allcatalogues_v1.csv") 
+      df <- data.table::fread("data_raw/allcatalogues_v1.csv") %>%
+        mutate(country = substr(source, 1, 2))
     }
   }
   
@@ -182,7 +200,8 @@ prepare_data <- function(cats, level = 4, sample_p = 1, minimum = 10, type = 1, 
     cbind(cleanText(cats$product)) %>%
     cbind(toupper(cats$code)) %>%
     cbind(cats$source) %>%
-    magrittr::set_colnames(., c("category", "product", "chain", "source")) %>%
+    cbind(toupper(cats$country)) %>%
+    magrittr::set_colnames(., c("category", "product", "chain", "source", "country")) %>%
     mutate(category = cleanText(category, spaces = ".")) %>%
     sample_n(round(nrow(cats) * sample_p)) %>%
     filter(!is.na(category)) %>%

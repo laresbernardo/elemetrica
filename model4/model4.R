@@ -44,20 +44,41 @@ data <- df %>% bind_cols(vctrs) %>% filter(!is.na(.data$C1))
 print(head(data))
 dim(vctrs)
 
-# Train model
-modelx <- h2o_automl(
-  data, 
-  y = "category", 
-  ignore = c("product", "chain", "source"),
-  max_models = params$models,
+# Train model (manual)
+processed <- model_preprocess(
+  data, y = "category", 
+  split = params$train_p, 
+  thresh = 1000)
+# h2o::h2o.xgboost / h2o::h2o.randomForest
+manual <- h2o.randomForest(
+  training_frame = quiet(as.h2o(select(processed$data, -product, -chain, -source))),
+  y = "tag",
+  #stopping_metric = "misclassification",
+  stopping_rounds = 5,
+  ntrees = 50,
+  keep_cross_validation_models = FALSE,
+  nfolds = params$nfolds)
+modelx <- h2o_results(
+  manual, 
+  test = processed$data, train = processed$data,
+  model_type = processed$model_type,
   split = params$train_p,
-  nfolds = params$nfolds,
-  exclude_algos = params$exclude_algos,
-  include_algos = params$include_algos,
-  thresh = 1000, 
-  start_clean = FALSE,
-  plots = FALSE
-); stop <- toc("h2o_automl", quiet = TRUE)
+  plots = FALSE)
+
+# # Train model (automl)
+# modelx <- h2o_automl(
+#   data, 
+#   y = "category", 
+#   ignore = c("product", "chain", "source"),
+#   max_models = params$models,
+#   split = params$train_p,
+#   nfolds = params$nfolds,
+#   exclude_algos = params$exclude_algos,
+#   include_algos = params$include_algos,
+#   thresh = 1000, 
+#   start_clean = FALSE,
+#   plots = FALSE
+# ); stop <- toc("h2o_automl", quiet = TRUE)
 
 # Select model object
 model <- modelx
