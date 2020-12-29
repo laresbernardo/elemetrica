@@ -9,7 +9,8 @@ ec_nolabs <- readGS(
   range = "C4:D19067")
 prod <- ec_nolabs %>% 
   magrittr::set_colnames(c("product", "internal")) %>%
-  mutate(row_id = row_number())
+  mutate(row_id = row_number(),
+         country = "EC")
 
 # Run predictions
 new <-  h2o_word2vec.predict(
@@ -25,7 +26,7 @@ new %>% ungroup() %>% sample_n(20) %>% arrange(desc(probability))
 
 # Check specific inputs
 sample_n(cats, 5) %>% select(product, chain4)
-product_name <- "TEFLON 19MM"
+product_name <- "TEFLON"
 h2o_word2vec.predict(product_name, w2v, model$model, params = params, clean = TRUE, top = 5)
 # Search for products/categories containing product_name
 df %>% clean_label("category") %>% 
@@ -72,17 +73,6 @@ temp <-  h2o_word2vec.predict(
   params = params, 
   clean = TRUE)
 hist(temp$probability)
-
-h2o::h2o.findSynonyms(w2v.model$model, as.h2o("mortero"), 10)
-
-# ADD INTERNAL CODES
-gs <- readGS("Elemétrica: Catálogo Disensa", "TopProducts", email = "laresbernardo@gmail.com")
-labeled_gs <- gs %>% left_join(
-  cats %>% mutate(chain4 = cleanText(cats$chain4, spaces = ".")) %>% 
-    clean_label("chain4") %>%
-    select(chain4, code) %>% distinct(), 
-  by = c("Predicción" = "chain4"))
-writeGS(select(labeled_gs, code), "Elemétrica: Catálogo Disensa", "Temp")
 
 # JOIN RESULTS TO COMPARE
 gs1 <- readGS("Elemétrica: Catálogo Disensa", "TopProducts", email = "laresbernardo@gmail.com")

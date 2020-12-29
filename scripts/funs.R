@@ -8,7 +8,7 @@ library(dplyr)
 library(lares)
 library(ggplot2)
 library(word2vec)
-h2o.init()
+lares::quiet(h2o.init())
 
 # Define stopwords
 STOP_WORDS = c("de","para","con")
@@ -26,9 +26,9 @@ read_codes <- function(type = 2, refresh = FALSE) {
         email = "laresbernardo@gmail.com") %>%
         select(1,2,4,6,8) %>%
         magrittr::set_colnames(c("code",paste0("level",1:4)))
-      write.csv(ret, "full_catalogue.csv", row.names = FALSE) 
+      write.csv(ret, "data_raw/full_catalogue.csv", row.names = FALSE) 
     } else {
-      ret <- read("full_catalogue.csv") 
+      ret <- read("data_raw/full_catalogue.csv") 
     }
   }
   return(ret)
@@ -227,13 +227,17 @@ add_units <- function(df, add = TRUE) {
 }
 
 # Print summary
-summary_data <- function(df, cats, level = 4) {
+summary_data <- function(df, cats, level = 4, train_ts = FALSE) {
+  if (!train_ts) {
+    test_sheet_products <- sum(df$ts_sheet)
+    df <- df[!df$ts_sheet,]
+  } 
   list(products = nrow(df),
        categories = nrow(unique(cats[,paste0("level",level)])),
        categories_used = length(unique(df$category)),
-       data_used = round(nrow(df)/nrow(cats), 4))
+       data_used = round(nrow(df)/nrow(cats), 4),
+       ts_products = test_sheet_products)
 }
-
 
 # Clean product names before word2vec
 clean_product <- function(x, 
@@ -396,4 +400,40 @@ save_log <- function(params, save = TRUE, print = TRUE, dir = "") {
     write.csv(log_tab, file = file, row.names = FALSE)  
   }
   
+}
+
+test_sheets <- function(refresh = FALSE) {
+  csv <- "data_raw/test_sheet.csv"
+  if (refresh) {
+    filename <- "Pesos por categorias"
+    mx <- readGS(filename, "Resumen Mx", email = "laresbernardo@gmail.com")[,1:4] %>% mutate(country = "MX")
+    ec <- readGS(filename, "Resumen Ec", email = "laresbernardo@gmail.com")[,1:4] %>% mutate(country = "EC")
+    colnames(mx) <- colnames(ec) <- c("description","value","weight","code","country")
+    out <- bind_rows(mx, ec) %>%
+      select(country, code, value, weight, description) %>%
+      group_by(country) %>% mutate(weight = value/sum(value)) %>%
+      arrange(country, desc(weight)) 
+    write.csv(out, file = csv, row.names = FALSE)  
+  } else {
+    out <- read.csv(csv)
+  }
+  return(out)
+}
+
+# Create dataframe with weighted samples to evaluate models
+test_sheets_data <- function(products_df, weights_df, min = 5, max = 40) {
+  temp <- select(weights_df, country, code, weight) %>%
+    filter(code %in% products_df$chain) %>%
+    mutate(total = round(scales::rescale(weight, to = c(min, max))))
+  res <- c()
+  for (i in 1:nrow(temp)) {
+    x <- products_df %>% 
+      filter(chain == temp$code[i], country == temp$country[i]) %>% 
+      sample_n(temp$total[i], replace = TRUE) %>%
+      distinct(.keep_all = TRUE)
+    res <- bind_rows(res, x)
+  }
+  res <- select(res, 5,3,2,4,1)
+  message("Test sheet size: ", formatNum(nrow(res), 0))
+  return(res)
 }

@@ -9,6 +9,8 @@ params <- list(
   level = 4,  # Default: 4
   # Minimum products per category allowed (default: 10)
   min_per_cat = 10,  # Default: 10
+  # Test sheet settings
+  train_ts = FALSE, # Default: FALSE
   # Tokenize options
   dropnumwords = FALSE, # Default: FALSE
   minchar = 1, # Default: 1
